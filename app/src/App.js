@@ -1,6 +1,8 @@
 import React from 'react';
+import './styles/reset.css';
 import './styles/App.css';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 function App() {
   return (
@@ -15,12 +17,7 @@ function App() {
         </div>
       </header>
 
-      <main>
-        <h1>Professor Online</h1>
-
-        <p>Sunt aliquip quis ad exercitation aute enim. Veniam aliqua non id ea minim anim laborum ut irure ad tempor sunt.
-          Qui tempor aliquip occaecat proident fugiat duis fugiat pariatur.</p>
-      </main>
+      <Home/>
 
       <Footer/>
 
