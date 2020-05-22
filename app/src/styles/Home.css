@@ -10,3 +10,19 @@ main {
     margin: 0;
 }
 
+#busca-curso {
+
+    width: 200px;
+    border-radius: 5px;
+    border: 0.3px black;
+    padding: 2px 0;
+    margin: 20px 0;
+    width: 15%;
+}
+
+
+main img {
+
+    width: fit-content;
+    height: fit-content;
+}
