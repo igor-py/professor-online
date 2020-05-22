@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/App.css';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -8,7 +9,6 @@ function App() {
         <div className="caixa">
           <nav className="paginas">
             <p>Seja um Professor</p>
-            <p>Quem Somos</p>
             <p>Inscreva-se</p>
             <p>Entrar</p>
           </nav>
@@ -21,6 +21,8 @@ function App() {
         <p>Sunt aliquip quis ad exercitation aute enim. Veniam aliqua non id ea minim anim laborum ut irure ad tempor sunt.
           Qui tempor aliquip occaecat proident fugiat duis fugiat pariatur.</p>
       </main>
+
+      <Footer/>
 
     </div>
   );
