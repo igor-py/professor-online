@@ -1,21 +1,28 @@
 #caixa-header img{
-    width: 8%;
-    padding-left: 30px;
+    width: 2.1vw;
+    position: absolute;
 }
 
 #caixa-header label{
     color: white;
-    padding-right: 40px;
-    
+    padding-right: 80px;
+    font-size: 0.9vw;
+    float: right;
+}
+
+#caixa-header div{
+    width: 95%;
+    float: right;
 }
 
 #caixa-header{
     background-color: #262626;
-    padding: 5px;
-    display: flex;
+    height: 1vw;
 }
 
 #div-header{
-    padding-left: 300px;
+    padding-left: 50vw;
     padding-top: 15px;
+    padding-bottom: 12px;
+    width: 100%;
 }
