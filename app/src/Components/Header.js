@@ -19,19 +19,6 @@ export default function Header(){
             </div>  
         </header>
 
-        /*
-        <div id = 'caixa-header'>
-            <div>
-                <img src= {professor} alt="Professor"/>
-            </div>
-
-            <div id= 'div-header'>
-                <label>Seja um Professor</label>
-                <label>Inscreva-se</label>
-                <label>Entrar</label>                       
-            </div>
-        </div>
-        */
       
     );
 }
