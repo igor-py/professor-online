@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 
 class Pesquisa extends Component {
 
@@ -52,7 +54,9 @@ class Pesquisa extends Component {
         
         return (
             <div id="principal-pesquisa">
-                
+                <Header/>
+
+                <Footer/>
             </div>
         );
     }
