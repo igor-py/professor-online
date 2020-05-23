@@ -22,41 +22,33 @@ class UserController {
 
     const userCheck = await this.userExists(req.body.email);
 
-    console.log('userCheck', userCheck);
-
     if (userCheck) {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    let insertUserResult;
+    let newUser;
 
     try {
-      insertUserResult = await pool.query(queries.insertNewUser(req.body));
+      await pool.query(queries.insertNewUser(req.body));
+      newUser = (await pool.query(queries.getUserByEmail(req.body.email)))
+        .rows[0];
     } catch (e) {
       console.log(e);
       return res.status(500).json({ error: e });
     }
 
-    /*
-    let insertTagsResult;
-
     if (req.body.tags.length > 0) {
       try {
-        insertTagsResult = pool.query(
-          queries.insertTagsByUserId(1, req.body.tags)
-        );
+        await pool.query(queries.insertTagsByUserId(newUser.id, req.body.tags));
       } catch (e) {
         console.log(e);
         return res.status(500).json({ error: e });
       }
     }
-    */
 
     await pool.end();
 
-    return res.status(200).json({
-      insertUserResult,
-    });
+    return res.status(200).json(newUser);
   };
 
   updateTags = async (req, res) => {};

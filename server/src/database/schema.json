@@ -23,14 +23,13 @@
     "literatura"
   ],
   "chat": {
-    "text": "string",
-    "from": "string",
-    "to": "string"
-  },
-  "userTags": {
     "userId": "number",
     "content": "number",
     "messageFrom": "string",
     "messageTo": "string"
+  },
+  "userTags": {
+    "userId": "number",
+    "tagId": "number"
   }
 }

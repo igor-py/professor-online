@@ -2,7 +2,7 @@ const createTagsTable = `
   DROP TABLE IF EXISTS Tags;
 
   CREATE TABLE Tags(
-    ID INT PRIMARY KEY      NOT NULL,
+    ID SERIAL PRIMARY KEY,
     name           TEXT NOT NULL
   );
 `;
