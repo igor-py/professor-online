@@ -53,10 +53,10 @@ export default class Pesquisa extends Component {
     
     render(){
         return (
-            <div id="principal-pesquisa">
+            <div>
                 <Header />
                 <div id = "tituloContainer">
-                  <h1 id = "tituloPesquisa">Resultados de pesquisa para Português</h1>
+                  <label>Resultados de pesquisa para Português</label>
                 </div>
                   <ul id = "pesquisaList">
                     {this.state.users.map(user => <User key = {user} user = {user} />)}
