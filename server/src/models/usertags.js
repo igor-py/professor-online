@@ -1,15 +1,19 @@
-/* eslint-disable no-unused-vars */
-module.exports = (sequelize, DataTypes) => {
-  const UserTags = sequelize.define(
-    'UserTags',
-    {
-      userId: DataTypes.INTEGER,
-      tagId: DataTypes.INTEGER,
-    },
-    {}
-  );
-  UserTags.associate = function (models) {
-    // associations can be defined here
-  };
-  return UserTags;
-};
+import Sequelize, { Model } from 'sequelize';
+
+class UserTags extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        userId: Sequelize.INTEGER,
+        tagId: Sequelize.INTEGER,
+      },
+      {
+        sequelize,
+      }
+    );
+
+    return this;
+  }
+}
+
+export default UserTags;

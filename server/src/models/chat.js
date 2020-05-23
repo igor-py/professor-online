@@ -1,16 +1,20 @@
-/* eslint-disable no-unused-vars */
-module.exports = (sequelize, DataTypes) => {
-  const Chat = sequelize.define(
-    'Chat',
-    {
-      text: DataTypes.STRING,
-      from: DataTypes.INTEGER,
-      to: DataTypes.INTEGER,
-    },
-    {}
-  );
-  Chat.associate = function (models) {
-    // associations can be defined here
-  };
-  return Chat;
-};
+import Sequelize, { Model } from 'sequelize';
+
+class Chat extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        text: Sequelize.STRING,
+        from: Sequelize.INTEGER,
+        to: Sequelize.INTEGER,
+      },
+      {
+        sequelize,
+      }
+    );
+
+    return this;
+  }
+}
+
+export default Chat;
