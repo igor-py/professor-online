@@ -23,7 +23,6 @@
     "literatura"
   ],
   "chat": {
-    "userId": "number",
     "content": "number",
     "messageFrom": "string",
     "messageTo": "string"

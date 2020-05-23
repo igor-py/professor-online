@@ -1,16 +1,17 @@
 import { Router } from 'express';
 import UserController from './controllers/UserController';
+import ChatController from './controllers/ChatController';
+
+import authMiddleware from './middlewares/auth';
 
 const routes = new Router();
 
-routes.get('/users/:id', UserController.getById);
-routes.get('/users', UserController.getUsersByTags);
+routes.get('/users/:id', authMiddleware, UserController.getById);
+routes.get('/users', authMiddleware, UserController.getUsersByTags);
 routes.post('/users', UserController.createUser);
-routes.put('/users/:id/tags', UserController.updateTags);
+routes.put('/users/:id/tags', authMiddleware, UserController.updateTags);
 
-/* 
-  - puxar mensagens entre dois usuarios
-  - escrever mensagem nova entre dois users
-*/
+routes.get('/chat/', authMiddleware, ChatController.getChat);
+routes.post('/chat', authMiddleware, ChatController.postMessage);
 
 export default routes;
