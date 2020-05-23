@@ -10,22 +10,15 @@ import {
 
 export default function Header(){
     return (
-        
-        <header id= "caixa-header">
-
-            <div>
-                
-                <img src= {professor} alt= "Professor Online"/>    
-                
-                
-                <label>Entrar</label>    
+        <div id="headerContainer">
+            <div id="logoContainer">
+                <img src= {professor} alt= "Professor Online" />
+            </div>
+            <div id="labelContainer">
+                <Link to="/entrar" className="links-header" >Entrar</Link>
+                <Link to="/sejaumprofessor" className="links-header">Seja um professor</Link>
                 <Link to="/inscreva-se" className="links-header">Inscreva-se</Link>
-                <label>Seja um Professor</label>
-                
-                
-            </div>  
-        </header>
-
-      
+            </div>
+        </div>
     );
 }
