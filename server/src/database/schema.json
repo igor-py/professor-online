@@ -29,6 +29,8 @@
   },
   "userTags": {
     "userId": "number",
-    "tagId": "number"
+    "content": "number",
+    "messageFrom": "string",
+    "messageTo": "string"
   }
 }

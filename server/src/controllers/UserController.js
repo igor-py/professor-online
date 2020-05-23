@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 import config from '../config/postgres';
 
 class UserController {
-  async store(req, res) {
+  async create(req, res) {
     const pool = new Pool();
 
     const schema = Yup.object().shape({
@@ -47,13 +47,32 @@ class UserController {
     const pool = new Pool(config);
 
     const id = req.params.id;
+
+    if (!id) {
+      return res.status(400).json({ error: 'Must provide Id' });
+    }
+
     const query = `SELECT * FROM public.users WHERE Id = ${id}`;
 
-    const result = await pool.query(query);
-    console.log(result.rows);
+    let result;
+
+    try {
+      result = await pool.query(query);
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({ error: e });
+    }
+
+    if (result.rowCount === 0) {
+      return res.status(400).json({ error: 'User not found' });
+    } else {
+      result = result.rows;
+    }
+
+    console.log(result);
 
     pool.end();
-    return res.status(200).json({ id: req.params.id });
+    return res.status(200).json({ user: result });
   }
 
   async update(req, res) {
