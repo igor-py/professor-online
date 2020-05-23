@@ -1,0 +1,50 @@
+#inscrevaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.links-inscrever:hover {
+  color: #C78C19;
+}
+
+#professorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#professorContainer img {
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+}
+
+#professorContainer label {
+  color: rgba(0, 0, 0, 0.74);
+  font-size: 20px;
+}
+
+.links-inscrever {
+  color: rgba(0, 0, 0, 0.74);
+  margin-top: 20px;
+  text-decoration-line: none;
+}
+
+#alunoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#alunoContainer img {
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+}
+
+#alunoContainer label {
+  color: rgba(0, 0, 0, 0.74);
+  font-size: 20px;
+}
