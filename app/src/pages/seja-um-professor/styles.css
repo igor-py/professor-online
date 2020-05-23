@@ -28,12 +28,25 @@ h1{
 }
 
 .autor{
-    padding-left: 200px;
+    padding-left: 215px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
 }
 
 .botao{
-    display: block;
+    margin-top: 25px;
     text-align: center;
-    width: 150px;
-    height: 25px;
+    font-size: large;
+    width: 250px;
+    height: 50px;
+    transition: 0.5s;
+    border: none;
+	border-radius: 5px;
+}
+
+.botao:hover{
+    background-color: lightsalmon;
 }

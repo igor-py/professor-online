@@ -20,12 +20,15 @@ export default function SejaUmProfessorPage() {
               <li class="vantagem">Aprendizado constante;</li>
               <li class="vantagem">Casa dia é um dia diferente;</li>
               <li class="vantagem">Possibilidade constante de se fazer novas amizades;</li>
-              <div class="frase-motivacional">
+            <div class="frase-motivacional">
                 <li class="frase">Feliz aquele que transfere o que sabe e aprende o que ensina.</li>
                 <li class="autor">Autor: Cora Coralina</li>
               </div>      
             </div>
-            <button class="botao">Inscreva-se</button>
+            <div class="flex-container">
+              <button class="botao">Inscreva-se</button>
+            </div>
+            
           </li>
         </body>
         
