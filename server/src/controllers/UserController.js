@@ -51,9 +51,67 @@ class UserController {
     return res.status(200).json(newUser);
   };
 
-  updateTags = async (req, res) => {};
+  updateTags = async (req, res) => {
+    const pool = new Pool(config);
 
-  getByTags = async (req, res) => {};
+    const id = req.params.id;
+
+    const schema = Yup.object().shape({
+      tags: Yup.array().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Incorrect body format.' });
+    }
+
+    const userCheck = await this.userExists('', id);
+
+    if (!userCheck) {
+      return res.status(400).json({ error: 'User does not exist.' });
+    }
+
+    if (req.body.tags.length > 0) {
+      try {
+        await pool.query(queries.deleteTagsByUserId(id));
+        await pool.query(queries.insertTagsByUserId(id, req.body.tags));
+      } catch (e) {
+        console.log(e);
+        return res.status(500).json({ error: e });
+      }
+    }
+
+    await pool.end();
+
+    return res.status(200).json({ meesage: 'new tags added' });
+  };
+
+  getUsersByTags = async (req, res) => {
+    const pool = new Pool(config);
+
+    const schema = Yup.object().shape({
+      tags: Yup.array().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Incorrect body format.' });
+    }
+
+    let users;
+
+    if (req.body.tags.length > 0) {
+      try {
+        users = (await pool.query(queries.getUserIdsByTagIds(req.body.tags)))
+          .rows;
+      } catch (e) {
+        console.log(e);
+        return res.status(500).json({ error: e });
+      }
+    }
+
+    await pool.end();
+
+    return res.status(200).json({ users });
+  };
 
   getById = async (req, res) => {
     const pool = new Pool(config);
@@ -79,21 +137,18 @@ class UserController {
       result = result.rows;
     }
 
-    pool.end();
+    await pool.end();
+
     return res.status(200).json({ user: result });
   };
 
   userExists = async (email = '', id = 0) => {
     const pool = new Pool(config);
 
-    const checkForUserQuery = `
-      SELECT * FROM public.users WHERE email = '${email}' OR id = ${id};
-    `;
-
     let result;
 
     try {
-      result = await pool.query(checkForUserQuery);
+      result = await pool.query(queries.checkForExistingUser(email, id));
     } catch (e) {
       throw e;
     }

@@ -19,14 +19,28 @@ const insertTagsByUserId = (userId, tagIds) => {
   `;
 };
 
+const deleteTagsByUserId = (userId) => `
+  DELETE FROM public.userTags WHERE userId = ${userId}
+`;
+
 const getUserById = (id) => `SELECT * FROM public.users WHERE Id = ${id}`;
 
 const getUserByEmail = (email) =>
   `SELECT * FROM public.users WHERE email = '${email}'`;
 
+const checkForExistingUser = (email, id) => `
+  SELECT * FROM public.users WHERE email = '${email}' OR id = ${id};
+`;
+const getUserIdsByTagIds = (tagIds) => `
+  SELECT DISTINCT userId FROM public.userTags WHERE tagId IN (${tagIds})
+`;
+
 export const queries = {
   insertNewUser,
   insertTagsByUserId,
+  deleteTagsByUserId,
   getUserById,
   getUserByEmail,
+  checkForExistingUser,
+  getUserIdsByTagIds,
 };
