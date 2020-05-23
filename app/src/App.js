@@ -4,16 +4,12 @@ import './styles/App.css';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Header from './Components/Header';
+import Routes from './routes';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-
-      <Home/>
-
-      <Footer/>
-
+      <Routes />
     </div>
   );
 }

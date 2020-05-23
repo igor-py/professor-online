@@ -1,6 +1,13 @@
 #caixa-header img{
     width: 2.1vw;
     position: absolute;
+    cursor: pointer;
+}
+
+#caixa-header img:hover{
+
+    opacity: 0.6;
+    transform: scale(1.03);
 }
 
 #caixa-header label{
@@ -8,6 +15,13 @@
     padding-right: 80px;
     font-size: 0.9vw;
     float: right;
+    cursor: pointer;
+}
+
+#caixa-header label:hover {
+
+    text-decoration: underline;
+    color: #C78C19;
 }
 
 #caixa-header div{

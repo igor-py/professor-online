@@ -1,7 +1,6 @@
 #main-home {
     align-items: center;
     background: #F3F3F3;
-    padding: 20px 0;
 }
 
 main {
@@ -25,4 +24,9 @@ main img {
 
     width: fit-content;
     height: fit-content;
+}
+
+#fundo-logos img:hover {
+
+    transform: scale(1.2);
 }
