@@ -10,15 +10,16 @@
     transform: scale(1.03);
 }
 
-#caixa-header label{
+#caixa-header label, .links-header{
     color: white;
     padding-right: 80px;
     font-size: 0.9vw;
     float: right;
     cursor: pointer;
+    text-decoration: none;
 }
 
-#caixa-header label:hover {
+#caixa-header label:hover, .links-header:hover {
 
     text-decoration: underline;
     color: #C78C19;

@@ -1,6 +1,12 @@
 import React from 'react';
 import '../styles/Header.css';
 import professor from '../images/professor.png'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 export default function Header(){
     return (
@@ -11,8 +17,9 @@ export default function Header(){
                 
                 <img src= {professor} alt= "Professor Online"/>    
                 
+                
                 <label>Entrar</label>    
-                <label>Inscreva-se</label>
+                <Link to="/inscreva-se" className="links-header">Inscreva-se</Link>
                 <label>Seja um Professor</label>
                 
                 
