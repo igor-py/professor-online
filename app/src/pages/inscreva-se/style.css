@@ -12,7 +12,7 @@ main h2 {
     margin: 20px 0;
 }
 
-#inputs {
+.inputs {
 
     display: flex;
     margin: 20px 0;
@@ -26,16 +26,17 @@ main h2 {
     margin-right: auto;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    font-size: 13px;
 
 }
 
-#inputs label {
+.inputs label, .inputs legend {
 
     display: flex;
-    padding: 5px 0 5px;
     text-align: center;
-    flex: 1;
+    margin-bottom: 2px;
+    padding: 5px 0;
+    font-size: 1.2em;
 }
 
 .entradas {
