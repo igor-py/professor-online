@@ -26,3 +26,8 @@ main img {
     width: fit-content;
     height: fit-content;
 }
+
+#fundo-logos img:hover {
+
+    transform: scale(1.2);
+}
