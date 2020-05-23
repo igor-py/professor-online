@@ -3,6 +3,7 @@ import './styles/reset.css';
 import './styles/App.css';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
+import Pesquisa from './pages/Pesquisa';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       </header>
 
       <Home/>
+
+      <Pesquisa/>
 
       <Footer/>
 
