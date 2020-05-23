@@ -1,5 +1,7 @@
 #headerContainer img{
     cursor: pointer;
+    width: 40px;
+    height: 40px;
 }
 
 #headerContainer img:hover{
@@ -8,7 +10,7 @@
 }
 
 #headerContainer .links-header:hover {
-    color: #C78C19;
+    color: #EB423F;
 }
 
 #headerContainer .links-header{
@@ -30,7 +32,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: #262626;
-    height: 50px;
+    height: 60px;
     padding-left: 30px;
     padding-right: 40px;
+}
+
+#fundo-logos img:hover{
+
+    transform: scale(1.25);
 }
