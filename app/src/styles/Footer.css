@@ -1,47 +1,47 @@
 footer {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
 }
 
 #footerContainer {
-    display: flex;
-    align-items: center;
-    padding-left: 70px;
-    padding-right: 70px;
-    justify-content: space-between;
-    background: #262626;
-    height: 8.4vw;
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+  padding-right: 70px;
+  justify-content: space-between;
+  background: #262626;
+  height: 15vh;
 }
 
 #linksContainer {
-    display: flex;
-        flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #link {
-    color: antiquewhite;
-    text-decoration: none;
-    font-size: 0.8vw;
-    margin-top: 12px;
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 0.8vw;
+  margin-top: 12px;
 }
 
 #link:hover {
-    color: #EB423F;
+  color: #eb423f;
 }
 
 img {
-    margin-left: 20px;
-    width: 30px;
-    height: 30px;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 label {
-    margin-left: 50px;
-    font-size: 10px;
-    color: white;
+  margin-left: 50px;
+  font-size: 10px;
+  color: white;
 }
 
 #imagemCopiryghtContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
