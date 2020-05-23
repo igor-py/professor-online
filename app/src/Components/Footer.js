@@ -1,26 +1,28 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 import '../styles/Footer.css';
+import {Link} from 'react-router-dom';
+import instagramLogo from '../images/instagramLogo.png';
+import facebookLogo from '../images/facebookLogo.png';
+import twitterLogo from '../images/twitterLogo.png';
 
-function Footer() {
-
+export default function Footer() {
     return (
-
-        <Router>
-            <footer>
-                <div id="caixa-footer">
-                    <nav>
-                        <Link to="/" className="link-footer">Sobre</Link>
-                    </nav>
+        <div id="footerContainer">
+            <div id = "linksContainer">
+                <Link id ="link">Quem somos</Link>
+                <Link id ="link">Ajuda</Link>
+                <Link id ="link">Contatos</Link>
+            </div>
+            <div id = "imagemCopiryghtContainer">
+            <div id="imageContainer">
+                <img src={instagramLogo} />
+                <img src={facebookLogo} />
+                <img src={twitterLogo} />
+                <div id = "copiryghtContainer">
+                    <label>© 2020 professor online</label>
                 </div>
-            </footer>
-        </Router>
+            </div>
+            </div>
+        </div>
     )
 }
-
-export default Footer;

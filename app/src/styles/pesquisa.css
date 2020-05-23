@@ -1,0 +1,36 @@
+#tituloContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#pesquisaList {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#infoPesquisaContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  align-items: center;
+  border-top: 1px solid rgb(197, 195, 195);
+}
+
+#userInfoContainer {
+  width: 300px;
+  padding-left: 60px;
+}
+
+p {
+  margin-top: 15px;
+}
+
+button {
+  width: 100px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 0.849);
+  color: white;
+}
