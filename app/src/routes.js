@@ -14,12 +14,9 @@ export default function Routes() {
         <Route path="/" exact component={Home}/>
         <Route path="/sejaumprofessor" component={SejaUmProfessorPage}/>
         <Route path="/inscreva-se" component={InscrevaSe}/>
-<<<<<<< HEAD
         <Route path="/pesquisa" component={Pesquisa}/>
-=======
         <Route path="/inscreva-aluno" component={Aluno}/>
         <Route path="/inscreva-professor" component={Professor}/>
->>>>>>> inscreva
       </Switch>
     </BrowserRouter>
   );
