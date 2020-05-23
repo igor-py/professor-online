@@ -8,9 +8,9 @@ class User extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.STRING,
-        isTeacher: Sequelize.STRING,
+        isTeacher: Sequelize.BOOLEAN,
         turn: Sequelize.STRING,
-        rating: Sequelize.STRING,
+        rating: Sequelize.FLOAT,
       },
       {
         sequelize,
