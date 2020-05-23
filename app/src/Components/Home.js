@@ -44,7 +44,7 @@ class Home extends Component {
                         <img src={homen_1} alt="Professor"></img>
 
                         <div>
-                            <h2>Seja um Professor</h2><br/>
+                            <h2>Seja um Professor</h2>
                             <p>Seja um professor solidário em um<br/> momento em que há diversos estudantes<br/> precisando de você!</p>
                         </div>
                         
@@ -53,8 +53,11 @@ class Home extends Component {
                     <div id="exemplo-aluno">
                         
                         <div>
-                            <h2>Seja um Aluno</h2><br/><br/>
-                            <p>Este website é essencial se você está<br/> estudando por conta própria e quer tirar<br/> suas dúvidas. Aqui os professores te respondem<br/> de forma simples para que você não feche<br/> essa aba com dúvida.</p>
+                            <h2>Seja um Aluno</h2><br/><br/><br/>
+                            <p>Este website é essencial se você está<br/> 
+                            estudando por conta própria e quer tirar<br/> suas dúvidas. 
+                            Aqui os professores te respondem<br/> de forma simples para que você não feche<br/> 
+                            essa aba com dúvida.</p>
                         </div>
 
                         <img src={homen_2} alt="Aluno"/>
