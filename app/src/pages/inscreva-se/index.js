@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import './style.css';
+import mulher_1 from '../../images/mulher1.png';
+import mulher_2 from '../../images/mulher2.png';
 
 // Somente chamar categorias quando for cadastro de professor
 const Categorias = () => {
@@ -55,6 +57,14 @@ export default function InscrevaSe() {
             <Header />
 
             <main>
+                <div className="imagens-login">
+                    <h3>Professor</h3>
+                    <img src={mulher_1} alt="Mulher Experiente representando professora"></img>
+
+                    <h3>Aluno</h3>
+                    <img src={mulher_2} alt="Mulher representando aluna"></img>
+                </div>
+                
                 <h2>Inscreva-Se</h2>
 
                 <div className="inputs">

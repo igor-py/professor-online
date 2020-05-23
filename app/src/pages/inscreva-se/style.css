@@ -1,6 +1,6 @@
 #inscreva-se{
 
-    background: #F3F3F3;
+    background: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -52,4 +52,22 @@ main h2 {
 
     display: flex;
     margin: 2px 2px;
+}
+
+.imagens-login {
+
+    display: flex;
+}
+
+.imagens-login img{
+
+    background: #F3F3F3;
+    align-items: left;
+}
+
+h3 {
+
+    font-weight: bold;
+    font-size: 17px;
+    margin: 10px 0;
 }
