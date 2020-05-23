@@ -5,5 +5,5 @@ export const ProfessorItemList = Styled.ul`
 `
 
 export const ProfessorItemContainer = Styled.div`
-  display: flex;
+
 `
