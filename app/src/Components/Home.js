@@ -33,13 +33,13 @@ class Home extends Component {
                     <img src={business} alt="Representação dos Negócios" />
 
                     <div id="exemplo-professor">
-                        <img src={homen_1} alt="Homen olhando pras nuvens"></img>
+                        <img src={homen_1} alt="Homem olhando pras nuvens"></img>
                         
                         <h3>Seja um Professor</h3>
                         <p>Seja um professor solidário em um momento em que há diversos estudantes precisando de você!
                         Seja um aluno</p>
 
-                        <img src={homen_2} alt="Homen Sorrindo"></img>
+                        <img src={homen_2} alt="Homem Sorrindo"></img>
                         <h3>Seja um Aluno</h3>
                         <p>
                             Este website é essencial se você está estudando por conta própria e quer tirar suas dúvidas. 
