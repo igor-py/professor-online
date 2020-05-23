@@ -1,10 +1,11 @@
 import * as Yup from 'yup';
 import { Pool } from 'pg';
 import config from '../config/postgres';
+import { queries } from '../database/queries/user';
 
 class UserController {
-  async create(req, res) {
-    const pool = new Pool();
+  createUser = async (req, res) => {
+    const pool = new Pool(config);
 
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -12,38 +13,57 @@ class UserController {
       password: Yup.string().required().min(6),
       isTeacher: Yup.boolean().required(),
       turn: Yup.string().required(),
-      rating: Yup.number().required(),
+      tags: Yup.array(),
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation failed.' });
+      return res.status(400).json({ error: 'Incorrect body format.' });
     }
 
-    const query = 'INSERT INTO public.user';
+    const userCheck = await this.userExists(req.body.email);
 
-    const userExists = await User.findOne({ where: { email: req.body.email } });
+    console.log('userCheck', userCheck);
 
-    console.log(userExists);
-
-    if (userExists) {
+    if (userCheck) {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, isTeacher, turn, rating } = await User.create(
-      req.body
-    );
+    let insertUserResult;
 
-    return res.json({
-      id,
-      name,
-      email,
-      isTeacher,
-      turn,
-      rating,
+    try {
+      insertUserResult = await pool.query(queries.insertNewUser(req.body));
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({ error: e });
+    }
+
+    /*
+    let insertTagsResult;
+
+    if (req.body.tags.length > 0) {
+      try {
+        insertTagsResult = pool.query(
+          queries.insertTagsByUserId(1, req.body.tags)
+        );
+      } catch (e) {
+        console.log(e);
+        return res.status(500).json({ error: e });
+      }
+    }
+    */
+
+    await pool.end();
+
+    return res.status(200).json({
+      insertUserResult,
     });
-  }
+  };
 
-  async getById(req, res) {
+  updateTags = async (req, res) => {};
+
+  getByTags = async (req, res) => {};
+
+  getById = async (req, res) => {
     const pool = new Pool(config);
 
     const id = req.params.id;
@@ -52,12 +72,10 @@ class UserController {
       return res.status(400).json({ error: 'Must provide Id' });
     }
 
-    const query = `SELECT * FROM public.users WHERE Id = ${id}`;
-
     let result;
 
     try {
-      result = await pool.query(query);
+      result = await pool.query(queries.getUserById(id));
     } catch (e) {
       console.log(e);
       return res.status(500).json({ error: e });
@@ -69,59 +87,33 @@ class UserController {
       result = result.rows;
     }
 
-    console.log(result);
-
     pool.end();
     return res.status(200).json({ user: result });
-  }
+  };
 
-  async update(req, res) {
-    const schema = Yup.object().shape({
-      name: Yup.string(),
-      email: Yup.string().email(),
-      oldPassword: Yup.string().min(6),
-      password: Yup.string()
-        .min(6)
-        .when('oldPassword', (oldPassword, field) =>
-          oldPassword ? field.required() : field
-        ),
-      confirmPassword: Yup.string().when('password', (password, field) =>
-        password ? field.required().oneOf([Yup.ref('password')]) : field
-      ),
-    });
+  userExists = async (email = '', id = 0) => {
+    const pool = new Pool(config);
 
-    if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation failed.' });
+    const checkForUserQuery = `
+      SELECT * FROM public.users WHERE email = '${email}' OR id = ${id};
+    `;
+
+    let result;
+
+    try {
+      result = await pool.query(checkForUserQuery);
+    } catch (e) {
+      throw e;
     }
 
-    const { email, oldPassword } = req.body;
+    await pool.end();
 
-    const user = await User.findByPk(req.userId);
-
-    if (email !== user.email) {
-      const userExists = await User.findOne({
-        where: { email },
-      });
-
-      if (userExists) {
-        return res.status(400).json({ error: 'User already exists.' });
-      }
+    if (result.rowCount === 0) {
+      return false;
     }
 
-    if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not match' });
-    }
-
-    await user.update(req.body);
-
-    const { id, name } = await User.findByPk(req.userId);
-
-    return res.json({
-      id,
-      name,
-      email,
-    });
-  }
+    return true;
+  };
 }
 
 export default new UserController();
