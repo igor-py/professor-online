@@ -1,0 +1,39 @@
+body {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    font-size: 75px;
+    padding-left: 200px;
+    padding-top: 120px;
+    padding-bottom: 25px;
+}
+
+
+.paragrafos{
+    font-size: 25px;
+    text-align: left;
+    padding-left: 300px;
+}
+
+.vantagem::before{
+    content: "■ ";
+
+}
+
+.frase-motivacional{
+    font-family: garamond;
+    padding-top: 25px;
+    padding-left: 300px;
+}
+
+.autor{
+    padding-left: 200px;
+}
+
+.botao{
+    display: block;
+    text-align: center;
+    width: 150px;
+    height: 25px;
+}

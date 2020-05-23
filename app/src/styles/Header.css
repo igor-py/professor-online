@@ -31,6 +31,7 @@
 }
 
 #caixa-header{
+    display: block;
     background-color: #262626;
     height: 1vw;
 }
