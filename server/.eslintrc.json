@@ -14,6 +14,16 @@
   },
   "rules": {
     "no-console": 0,
-    "refer-destructuring": 0
+    "refer-destructuring": 0,
+    "import/no-dynamic-require": 0,
+    "implicit-arrow-linebreak": 0,
+    "comma-dangle": 0,
+    "func-names": 0,
+    "arrow-parens": 0,
+    "no-param-reassign": 0,
+    "class-methods-use-this": 0,
+    "no-confusing-arrow": 0,
+    "function-paren-newline": 0,
+    "object-curly-newline": 0
   }
 }

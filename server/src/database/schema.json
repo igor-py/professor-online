@@ -1,0 +1,34 @@
+{
+  "users": {
+    "name": "string",
+    "email": "string",
+    "password": "string",
+    "isTeacher": "bool",
+    "turn": "string",
+    "rating": "string"
+  },
+  "tags": {
+    "name": "string"
+  },
+  "example-tags": [
+    "matematica",
+    "portugues",
+    "historia",
+    "geografia",
+    "biologia",
+    "ingles",
+    "fisica",
+    "quimica",
+    "filosofia",
+    "literatura"
+  ],
+  "chat": {
+    "text": "string",
+    "from": "string",
+    "to": "string"
+  },
+  "userTags": {
+    "userId": "number",
+    "tagId": "number"
+  }
+}

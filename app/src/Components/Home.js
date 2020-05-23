@@ -11,6 +11,8 @@ import grupo from '../images/grupo.png';
 import mercado from '../images/mercado.png';
 import smartphone from '../images/smartphone.png';
 import universidade from '../images/universidade.png';
+import Footer from './Footer';
+import Header from './Header';
 
 
 class Home extends Component {
@@ -24,7 +26,11 @@ class Home extends Component {
 
         return (
 
+
             <div id="main-home">
+
+                <Header />
+
                 <main>
                     <h1>Professor Online</h1>
 
@@ -33,16 +39,16 @@ class Home extends Component {
                     <img src={business} alt="Representação dos Negócios" />
 
                     <div id="exemplo-professor">
-                        <img src={homen_1} alt="Homen olhando pras nuvens"></img>
-                        
+                        <img src={homen_1} alt="Homem olhando pras nuvens"></img>
+
                         <h3>Seja um Professor</h3>
                         <p>Seja um professor solidário em um momento em que há diversos estudantes precisando de você!
                         Seja um aluno</p>
 
-                        <img src={homen_2} alt="Homen Sorrindo"></img>
+                        <img src={homen_2} alt="Homem Sorrindo"></img>
                         <h3>Seja um Aluno</h3>
                         <p>
-                            Este website é essencial se você está estudando por conta própria e quer tirar suas dúvidas. 
+                            Este website é essencial se você está estudando por conta própria e quer tirar suas dúvidas.
                             Aqui os professores te respondem de forma simples para que você não feche essa aba com dúvida.
                         </p>
                     </div>
@@ -75,6 +81,8 @@ class Home extends Component {
                     </div>
 
                 </main>
+
+                <Footer />
             </div>
         )
     }

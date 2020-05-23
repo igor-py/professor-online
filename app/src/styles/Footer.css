@@ -24,3 +24,9 @@ footer {
     text-decoration: none;
     font-size: 0.8vw;
 }
+
+.link-footer:hover {
+
+    text-decoration: underline;
+    color: #C78C19;
+}
