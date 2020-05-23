@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { ProfessorItemList } from './styles';
+import Header from '../../Components/Header';
+import { ProfessorItemList, ProfessorItemContainer } from './styles';
 
-export class SejaUmProfessorPage extends Component {
-
-  render() {
+export default function SejaUmProfessorPage() {
     return (
+      <ProfessorItemContainer>
+      <Header />
       <ProfessorItemList>
         <li>
           <h1>Professor Online</h1>
@@ -16,6 +17,6 @@ export class SejaUmProfessorPage extends Component {
           <p1>Aqui vai uma imagem</p1>
         </li>
       </ProfessorItemList>
+      </ProfessorItemContainer>
     );
-  }
 }

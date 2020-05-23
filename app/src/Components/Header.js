@@ -4,9 +4,6 @@ import professor from '../images/professor.png'
 
 export default function Header(){
     return (
-        
-      
-
         <div id = 'caixa-header'>
             <div>
                 <img src= {professor} alt="Professor"/>
@@ -18,7 +15,5 @@ export default function Header(){
                 <label>Entrar</label>                       
             </div>
         </div>
-
-      
     );
 }
