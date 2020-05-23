@@ -1,8 +1,11 @@
 import * as Yup from 'yup';
-import User from '../models/user';
+import { Pool } from 'pg';
+import config from '../config/postgres';
 
 class UserController {
   async store(req, res) {
+    const pool = new Pool();
+
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string().email().required(),
@@ -16,7 +19,11 @@ class UserController {
       return res.status(400).json({ error: 'Validation failed.' });
     }
 
+    const query = 'INSERT INTO public.user';
+
     const userExists = await User.findOne({ where: { email: req.body.email } });
+
+    console.log(userExists);
 
     if (userExists) {
       return res.status(400).json({ error: 'User already exists.' });
@@ -34,6 +41,19 @@ class UserController {
       turn,
       rating,
     });
+  }
+
+  async getById(req, res) {
+    const pool = new Pool(config);
+
+    const id = req.params.id;
+    const query = `SELECT * FROM public.users WHERE Id = ${id}`;
+
+    const result = await pool.query(query);
+    console.log(result.rows);
+
+    pool.end();
+    return res.status(200).json({ id: req.params.id });
   }
 
   async update(req, res) {

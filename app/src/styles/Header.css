@@ -1,6 +1,7 @@
 #caixa-header img{
     width: 2.1vw;
     position: absolute;
+    cursor: pointer;
 }
 
 #caixa-header img:hover{
@@ -14,6 +15,7 @@
     padding-right: 80px;
     font-size: 0.9vw;
     float: right;
+    cursor: pointer;
 }
 
 #caixa-header label:hover {
