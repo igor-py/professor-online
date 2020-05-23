@@ -1,65 +1,69 @@
 import React, {Component} from 'react';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
+import Footer from '../../Components/Footer';
+import Header from '../../Components/Header';
+import User from '../../Components/User'
+import '../../styles/pesquisa.css'
 
-class Pesquisa extends Component {
+export default class Pesquisa extends Component {
 
     state = {
-
         users: [
             {
+                id: 1,
                 name: "Igor Marins",
                 email: "igor@gmail.com",
                 password: "12345",
                 isTeacher: true,
                 turn: "manhã",
-                rating: 5
+                rating: 5,
+                aula: "português"
               },
               {
+                id: 2,
                 name: "Douglas Toledo",
                 email: "douglas@gmail.com",
                 password: "12345",
                 isTeacher: true,
                 turn: "tarde",
-                rating: 4.3
+                rating: 4.3,
+                aula: "português"
               },
               {
+                id: 3,
                 name: "Leandro Trindade",
                 email: "leandro@gmail.com",
                 password: "12345",
                 isTeacher: true,
                 turn: "tarde",
-                rating: 3.9
+                rating: 3.9,
+                aula: "português"
               },
               {
+                id: 4,
                 name: "Vitão da Massa",
                 email: "vitor@gmail.com",
                 password: "12345",
                 isTeacher: true,
                 turn: "tarde",
-                rating: 3.3
+                rating: 3.3,
+                aula: "português"
               },
-
         ],
-
-    }
-
-    componentDidMount(){
-
-      const {users} = this.state;
-      console.log(users);
     }
     
     render(){
-        
         return (
             <div id="principal-pesquisa">
-                <Header/>
-
+                <Header />
+                <div id = "tituloContainer">
+                  <h1 id = "tituloPesquisa">Resultados de pesquisa para Português</h1>
+                </div>
+                  <ul id = "pesquisaList">
+                    {this.state.users.map(user => <User key = {user} user = {user} />)}
+                  </ul>
+                  
                 <Footer/>
             </div>
         );
     }
 }
-
-export default Pesquisa;
