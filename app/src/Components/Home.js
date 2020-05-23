@@ -34,53 +34,74 @@ class Home extends Component {
                 <main>
                     <h1>Professor Online</h1>
 
-                    <input type="text" id="busca-curso" placeholder="Busque Aqui um Curso"></input>
+                    <input type="text" placeholder="Busque Aqui um Curso"/>
 
-                    <img src={business} alt="Representação dos Negócios" />
+                   
+                    <img src={business} id="imagem_principal" alt="Representação dos Negócios" />
 
                     <div id="exemplo-professor">
-                        <img src={homen_1} alt="Homem olhando pras nuvens"></img>
+                        
+                        <img src={homen_1} alt="Professor"></img>
 
-                        <h3>Seja um Professor</h3>
-                        <p>Seja um professor solidário em um momento em que há diversos estudantes precisando de você!
-                        Seja um aluno</p>
-
-                        <img src={homen_2} alt="Homem Sorrindo"></img>
-                        <h3>Seja um Aluno</h3>
-                        <p>
-                            Este website é essencial se você está estudando por conta própria e quer tirar suas dúvidas.
-                            Aqui os professores te respondem de forma simples para que você não feche essa aba com dúvida.
-                        </p>
+                        <div>
+                            <h2>Seja um Professor</h2><br/>
+                            <p>Seja um professor solidário em um<br/> momento em que há diversos estudantes<br/> precisando de você!</p>
+                        </div>
+                        
                     </div>
 
+                    <div id="exemplo-aluno">
+                        
+                        <div>
+                            <h2>Seja um Aluno</h2><br/><br/>
+                            <p>Este website é essencial se você está<br/> estudando por conta própria e quer tirar<br/> suas dúvidas. Aqui os professores te respondem<br/> de forma simples para que você não feche<br/> essa aba com dúvida.</p>
+                        </div>
+
+                        <img src={homen_2} alt="Aluno"/>
+                        
+                    </div>
+ 
                     <div id="fundo-logos">
 
-                        <img src={fones} alt="Fones de Ouvido"></img>
-                        <h4>Música</h4>
+                        <div >
+                            
+                            <img src={fones} alt="Música"/>
+                            <h4>Música</h4>
+                            
+                            <img src={codigo} alt="WEB"/>
+                            <h4>WEB</h4>
+                            
+                        </div>
 
-                        <img src={codigo} alt="Símbolo de Navegador"></img>
-                        <h4>WEB</h4>
+                        <div>
+                            
+                            <img src={universidade} alt="Graduação"/>
+                            <h4>Graduação</h4>
+                            
+                            <img src={mercado} alt="Finanças"/>
+                            <h4>Finanças</h4>
+                            
+                        </div>
 
-                        <img src={universidade} alt="Representação de Universitário"></img>
-                        <h4>Graduação</h4>
+                        <div>
+                            <img src={smartphone} alt="Mobile"/>
+                            <h4>Mobile</h4>
 
-                        <img src={mercado} alt="Representação do Mercado Financeiro"></img>
-                        <h4>Finanças</h4>
+                            <img src={base_de_dados} alt="Banco de Dados"/>
+                            <h4>Banco de <br/>Dados</h4>
+                        </div>
 
-                        <img src={smartphone} alt="Celular Smart"></img>
-                        <h4>Mobile</h4>
+                        <div>
+                            <img src={ar_camera} alt="Fotografia"/>
+                            <h4>Fotografia</h4>
 
-                        <img src={base_de_dados} alt="Banco de Dados"></img>
-                        <h4>Banco de Dados</h4>
-
-                        <img src={ar_camera} alt="Câmera"></img>
-                        <h4>Fotografia</h4>
-
-                        <img src={grupo} alt="Três pessoas aleatórias"></img>
-                        <h4>Gerenciamento</h4>
+                            <img src={grupo} alt="Gerenciamento"/>
+                            <h4>Gerenciamento</h4>
+                        </div>
                     </div>
 
                 </main>
+
 
                 <Footer />
             </div>
