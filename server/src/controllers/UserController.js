@@ -1,10 +1,11 @@
 import * as Yup from 'yup';
 import { Pool } from 'pg';
 import config from '../config/postgres';
+import { queries } from '../database/queries/user';
 
 class UserController {
-  async store(req, res) {
-    const pool = new Pool();
+  createUser = async (req, res) => {
+    const pool = new Pool(config);
 
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -12,97 +13,99 @@ class UserController {
       password: Yup.string().required().min(6),
       isTeacher: Yup.boolean().required(),
       turn: Yup.string().required(),
-      rating: Yup.number().required(),
+      tags: Yup.array(),
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation failed.' });
+      return res.status(400).json({ error: 'Incorrect body format.' });
     }
 
-    const query = 'INSERT INTO public.user';
+    const userCheck = await this.userExists(req.body.email);
 
-    const userExists = await User.findOne({ where: { email: req.body.email } });
-
-    console.log(userExists);
-
-    if (userExists) {
+    if (userCheck) {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, isTeacher, turn, rating } = await User.create(
-      req.body
-    );
+    let newUser;
 
-    return res.json({
-      id,
-      name,
-      email,
-      isTeacher,
-      turn,
-      rating,
-    });
-  }
-
-  async getById(req, res) {
-    const pool = new Pool(config);
-
-    const id = req.params.id;
-    const query = `SELECT * FROM public.users WHERE Id = ${id}`;
-
-    const result = await pool.query(query);
-    console.log(result.rows);
-
-    pool.end();
-    return res.status(200).json({ id: req.params.id });
-  }
-
-  async update(req, res) {
-    const schema = Yup.object().shape({
-      name: Yup.string(),
-      email: Yup.string().email(),
-      oldPassword: Yup.string().min(6),
-      password: Yup.string()
-        .min(6)
-        .when('oldPassword', (oldPassword, field) =>
-          oldPassword ? field.required() : field
-        ),
-      confirmPassword: Yup.string().when('password', (password, field) =>
-        password ? field.required().oneOf([Yup.ref('password')]) : field
-      ),
-    });
-
-    if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation failed.' });
+    try {
+      await pool.query(queries.insertNewUser(req.body));
+      newUser = (await pool.query(queries.getUserByEmail(req.body.email)))
+        .rows[0];
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({ error: e });
     }
 
-    const { email, oldPassword } = req.body;
-
-    const user = await User.findByPk(req.userId);
-
-    if (email !== user.email) {
-      const userExists = await User.findOne({
-        where: { email },
-      });
-
-      if (userExists) {
-        return res.status(400).json({ error: 'User already exists.' });
+    if (req.body.tags.length > 0) {
+      try {
+        await pool.query(queries.insertTagsByUserId(newUser.id, req.body.tags));
+      } catch (e) {
+        console.log(e);
+        return res.status(500).json({ error: e });
       }
     }
 
-    if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not match' });
+    await pool.end();
+
+    return res.status(200).json(newUser);
+  };
+
+  updateTags = async (req, res) => {};
+
+  getByTags = async (req, res) => {};
+
+  getById = async (req, res) => {
+    const pool = new Pool(config);
+
+    const id = req.params.id;
+
+    if (!id) {
+      return res.status(400).json({ error: 'Must provide Id' });
     }
 
-    await user.update(req.body);
+    let result;
 
-    const { id, name } = await User.findByPk(req.userId);
+    try {
+      result = await pool.query(queries.getUserById(id));
+    } catch (e) {
+      console.log(e);
+      return res.status(500).json({ error: e });
+    }
 
-    return res.json({
-      id,
-      name,
-      email,
-    });
-  }
+    if (result.rowCount === 0) {
+      return res.status(400).json({ error: 'User not found' });
+    } else {
+      result = result.rows;
+    }
+
+    pool.end();
+    return res.status(200).json({ user: result });
+  };
+
+  userExists = async (email = '', id = 0) => {
+    const pool = new Pool(config);
+
+    const checkForUserQuery = `
+      SELECT * FROM public.users WHERE email = '${email}' OR id = ${id};
+    `;
+
+    let result;
+
+    try {
+      result = await pool.query(checkForUserQuery);
+    } catch (e) {
+      throw e;
+    }
+
+    await pool.end();
+
+    if (result.rowCount === 0) {
+      return false;
+    }
+
+    return true;
+  };
 }
 
 export default new UserController();
