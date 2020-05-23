@@ -1,14 +1,18 @@
-/* eslint-disable no-unused-vars */
-module.exports = (sequelize, DataTypes) => {
-  const Tags = sequelize.define(
-    'Tags',
-    {
-      name: DataTypes.STRING,
-    },
-    {}
-  );
-  Tags.associate = function (models) {
-    // associations can be defined here
-  };
-  return Tags;
-};
+import Sequelize, { Model } from 'sequelize';
+
+class Tags extends Model {
+  static init(sequelize) {
+    super.init(
+      {
+        name: Sequelize.STRING,
+      },
+      {
+        sequelize,
+      }
+    );
+
+    return this;
+  }
+}
+
+export default Tags;
