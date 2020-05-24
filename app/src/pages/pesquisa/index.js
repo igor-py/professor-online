@@ -7,7 +7,47 @@ import api from '../../services/api';
 export default class Pesquisa extends Component {
   state = {
     newUser: '',
-    users: [],
+    users: [
+      {
+        id: 1,
+        name: 'Igor Marins',
+        email: 'igor@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'manhã',
+        rating: 5,
+        aula: 'português',
+      },
+      {
+        id: 2,
+        name: 'Douglas Toledo',
+        email: 'douglas@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 4.3,
+        aula: 'matemática',
+      },
+      {
+        id: 3,
+        name: 'Leandro Trindade',
+        email: 'leandro@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 3.9,
+        aula: 'react',
+      },
+      {
+        id: 4,
+        name: 'Vitão da Massa',
+        email: 'vitor@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 3.3,
+        aula: 'react',
+      },],
   };
 
   handleInputChange = e => {
