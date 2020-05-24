@@ -57,9 +57,9 @@
   border-radius: 12px;
   border-width: 1px;
   border: solid #dcdcdc;
-  margin: 10.7% 0% 0% 70%;
+  margin: 150px 0% 0% 70%;
   width: 20%;
-  height: 18vw;
+  height: 270px;
   background-color: #262626;
 }
 
@@ -73,14 +73,21 @@ h3 {
   margin-left: 14%;
   border-radius: 6px;
   width: 70%;
+  font: 18px Arial;
+  font-weight: bold;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .dropdown-content button {
   cursor: pointer;
   margin-left: 32%;
-  margin-top: 20%;
+  margin-top: 40px;
   background-color: #262626;
   transition: all 0.5s;
+  font: 18px Arial;
 }
 
 .dropdown-content button span {

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/Header.css';
 import professor from '../images/professor.png';
-import { Link } from 'react-router-dom';
 import { getCookie, eraseCookie, setCookie } from '../utils/cookies';
+import { config } from '../config';
 
 export default function Header() {
   const [isLogged, setIsLogged] = useState();
@@ -33,7 +35,10 @@ export default function Header() {
     redirectToHome();
   }
 
-  function logIn() {
+  async function logIn() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
     setCookie('auth', 'aed1e15fs1asd', 7);
     const cookie = getCookie('auth');
     setCookieState(cookie);
@@ -84,12 +89,12 @@ export default function Header() {
       <div id="myDropdown" className="dropdown-content">
         <div>
           <h3>E-mail</h3>
-          <input type="text" />
+          <input type="text" id="email" />
         </div>
 
         <div>
           <h3>Senha</h3>
-          <input type="password" />
+          <input type="password" id="password" />
         </div>
 
         <button onClick={logIn}>
