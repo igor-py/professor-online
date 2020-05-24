@@ -307,14 +307,14 @@ export default function Cadastrar() {
             <FormFragment>
               <FormText>Voce gostaria de lecionar sobre que assunto?</FormText>
               <Select id="tag" name="tags">
-                <option value="1">matematica</option>
-                <option value="2">portugues</option>
-                <option value="3">historia</option>
+                <option value="1">matemática</option>
+                <option value="2">português</option>
+                <option value="3">história</option>
                 <option value="4">geografia</option>
                 <option value="5">biologia</option>
-                <option value="6">ingles</option>
-                <option value="7">fisica</option>
-                <option value="8">quimica</option>
+                <option value="6">inglês</option>
+                <option value="7">física</option>
+                <option value="8">química</option>
                 <option value="9">filosofia</option>
                 <option value="10">literatura</option>
                 <option value="11">artes</option>

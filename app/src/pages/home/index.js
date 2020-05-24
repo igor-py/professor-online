@@ -33,10 +33,10 @@ class Home extends Component {
             <div>
               <h2>Seja um Professor</h2>
               <p1>
-              Seja um agente de transformação do conhecimento.
+                Seja um agente de transformação do conhecimento.
                 <br /> Há nesse momento diversos alunos que precisam de sua
                 <br /> ajuda. Seu desafio será transmitir, de forma clara
-                <br />  e compreensível, o conteúdo para o aluno.
+                <br /> e compreensível, o conteúdo para o aluno.
                 <br /> Seja o elo entre o indivíduo e o saber.
               </p1>
             </div>
@@ -65,37 +65,34 @@ class Home extends Component {
           <div id="fundo-logos">
             <div>
               <img src={fones} alt="Música" />
-              <h4>Música</h4>
+              <h4>Matemática</h4>
 
               <img src={codigo} alt="WEB" />
-              <h4>WEB</h4>
+              <h4>Português</h4>
             </div>
 
             <div>
               <img src={universidade} alt="Graduação" />
-              <h4>Graduação</h4>
+              <h4>História</h4>
 
               <img src={mercado} alt="Finanças" />
-              <h4>Finanças</h4>
+              <h4>Inglês</h4>
             </div>
 
             <div>
               <img src={smartphone} alt="Mobile" />
-              <h4>Mobile</h4>
+              <h4>Geografia</h4>
 
               <img src={base_de_dados} alt="Banco de Dados" />
-              <h4>
-                Banco de <br />
-                Dados
-              </h4>
+              <h4>Física</h4>
             </div>
 
             <div>
               <img src={ar_camera} alt="Fotografia" />
-              <h4>Fotografia</h4>
+              <h4>Química</h4>
 
               <img src={grupo} alt="Gerenciamento" />
-              <h4>Gerenciamento</h4>
+              <h4>Biologia</h4>
             </div>
           </div>
         </main>

@@ -47,8 +47,6 @@ label {
   flex-direction: column;
 }
 
-
 .logos-social:hover {
-
   transform: scale(1.2);
 }
