@@ -14,8 +14,15 @@ import {
   UserInfo,
   BoldText,
   EmailContainer,
-  Line,
+  VerticalLine,
+  HorizontalLine,
+  MessagesContainer,
   MessagesHeader,
+  MessageContainer,
+  MessageTextContainer,
+  MessageTitle,
+  MessageText,
+  MessageAvatar,
 } from './styles';
 
 const categoryArray = [
@@ -99,9 +106,38 @@ export default function Perfil() {
             </ImagemContainer>
             {userState.isteacher ? renderTeacherInfo() : renderStudentInfo()}
           </LeftContainer>
-          <Line />
+          <VerticalLine />
           <RightContainer>
             <MessagesHeader>Ultimas Mensagens</MessagesHeader>
+            <MessagesContainer>
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava1" />
+                <MessageTextContainer>
+                  <MessageTitle>Igor Marins</MessageTitle>
+                  <MessageText>
+                    > Oi, Douglas! Podemos marcar uma aula?
+                  </MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+              <HorizontalLine />
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava2" />
+                <MessageTextContainer>
+                  <MessageTitle>Vitor Santos</MessageTitle>
+                  <MessageText>
+                    > Obrigado pela aula de ontem, muito boa!
+                  </MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+              <HorizontalLine />
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava3" />
+                <MessageTextContainer>
+                  <MessageTitle>Leandro</MessageTitle>
+                  <MessageText>> Para mim eh melhor de manha :(</MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+            </MessagesContainer>
           </RightContainer>
         </InnerContainer>
       </Pagecontainer>
