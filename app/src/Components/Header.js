@@ -31,6 +31,7 @@ export default function Header() {
 
   function logOut() {
     eraseCookie('auth');
+    eraseCookie('user');
     setCookieState('');
     redirectToHome();
   }
@@ -39,7 +40,27 @@ export default function Header() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    setCookie('auth', 'aed1e15fs1asd', 7);
+    let response;
+
+    try {
+      response = await axios({
+        method: 'post',
+        url: `${config.SERVER_URL}/sessions`,
+        data: {
+          email,
+          password,
+        },
+        crossDomain: true,
+      });
+    } catch (e) {
+      alert('Ocorreu um erro no login, tente novamente!');
+      return;
+    }
+
+    console.log(response);
+
+    setCookie('user', String(response.data.user), 7);
+    setCookie('auth', response.data.token, 7);
     const cookie = getCookie('auth');
     setCookieState(cookie);
     toogleDropdown();
