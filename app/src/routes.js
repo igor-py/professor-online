@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Cadastrar from './pages/cadastrar';
 import Home from './pages/home';
 import Pesquisa from './pages/pesquisa';
-import Entrar from './pages/entrar';
 import Header from '../src/Components/Header';
 import Footer from '../src/Components/Footer';
 
@@ -19,7 +18,6 @@ export default function Routes() {
       <PageContainer>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/entrar" component={Entrar} />
           <Route path="/cadastrar" component={Cadastrar} />
           <Route path="/pesquisa" component={Pesquisa} />
         </Switch>

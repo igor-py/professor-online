@@ -25,9 +25,9 @@ export default function Header() {
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>
-        <Link to="" className="links-header" onClick={myFunction}>
+        <label className="links-header" onClick={myFunction}>
           Entrar
-        </Link>
+        </label>
       </div>
 
       <div id="myDropdown" className="dropdown-content">
