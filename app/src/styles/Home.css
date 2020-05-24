@@ -56,10 +56,6 @@ main input{
     text-align: left;
 }
 
-p1{
-    text-align: left;
-}
-
 #exemplo-aluno{
     background-color: #F3F3F3;
     display: flex;

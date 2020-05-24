@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import professor from '../../images/professor-eis.png';
 import student from '../../images/student.png';
 import professor2 from '../../images/professor.png';
 import { config } from '../../config';
-import { getCookie, setCookie } from '../../utils/cookies';
+import { setCookie } from '../../utils/cookies';
 
 const Container = styled.div`
   margin-top: 40px;
@@ -133,11 +132,18 @@ const SubmmitButton = styled.button`
   }
 `;
 
+const Select = styled.select`
+  margin: 16px 16px 0 16px;
+  font: 18px Arial;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  background-color: #222;
+  color: #fff;
+`;
+
 export default function Cadastrar() {
   const [haveChosen, setHaveChosen] = useState(false);
   const [isProfessor, setIsProfessor] = useState();
-
-  const history = useHistory();
 
   async function logIn(email, password) {
     let response;
@@ -202,6 +208,8 @@ export default function Cadastrar() {
     const name = document.getElementById('p-name').value;
     const email = document.getElementById('p-email').value;
     const password = document.getElementById('p-pw').value;
+    const turn = document.getElementById('turn').value;
+    const tags = Number(document.getElementById('tag').value);
 
     try {
       response = await axios({
@@ -212,8 +220,8 @@ export default function Cadastrar() {
           email,
           password,
           isTeacher: true,
-          turn: 'student',
-          tags: [],
+          turn: turn,
+          tags: [tags],
         },
         crossDomain: true,
       });
@@ -274,11 +282,27 @@ export default function Cadastrar() {
             </FormFragment>
             <FormFragment>
               <FormText>Turno:</FormText>
-              <select id="tun" name="turnos">
+              <Select id="turn" name="turnos">
                 <option value="manha">manha</option>
                 <option value="tarde">tarde</option>
                 <option value="noite">noite</option>
-              </select>
+              </Select>
+            </FormFragment>
+            <FormFragment>
+              <FormText>Voce gostaria de lecionar sobre que assunto?</FormText>
+              <Select id="tag" name="tags">
+                <option value="1">matematica</option>
+                <option value="2">portugues</option>
+                <option value="3">historia</option>
+                <option value="4">geografia</option>
+                <option value="5">biologia</option>
+                <option value="6">ingles</option>
+                <option value="7">fisica</option>
+                <option value="8">quimica</option>
+                <option value="9">filosofia</option>
+                <option value="10">literatura</option>
+                <option value="11">artes</option>
+              </Select>
             </FormFragment>
             <SubmmitButton onClick={cadastrarProfessor}>
               Cadastrar
