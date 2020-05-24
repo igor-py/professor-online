@@ -1,12 +1,59 @@
 #tituloContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 }
 
 #tituloContainer label{
   font-size: 30px;
   padding-top: 30px;
   color: black;
+}
+
+#submitContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 23px;
+  width: 400px;
+  border-radius: 12px;
+  border: 3px solid #eee;
+  margin-top: 20px;
+}
+
+#tituloContainer img {
+  width: 200px;
+  height: 200px;
+}
+
+#tituloContainer input {
+  flex: 1;
+  border-style: none;
+  padding-left: 8px;
+}
+
+#tituloContainer input:focus {
+  outline: none;
+}
+
+#tituloContainer :hover {
+  opacity: 0.9;
+}
+
+#submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/search-24px.svg');
+}
+
+#tituloContainer button {
+  height: 23px;
+  width: 25px;
+  border-radius: 5px;
+  border: none;
+  background: none;
 }
 
 #pesquisaList {
@@ -32,7 +79,7 @@ p {
   margin-top: 15px;
 }
 
-button {
+#actionContainer button {
   width: 100px;
   height: 24px;
   border-radius: 7px;

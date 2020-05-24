@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import User from '../../Components/User';
 import '../../styles/pesquisa.css';
+import proffLogo from '../../images/professor.png'
 
 export default class Pesquisa extends Component {
   state = {
+    newUser: '',
     users: [
       {
         id: 1,
@@ -23,7 +25,7 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 4.3,
-        aula: 'português',
+        aula: 'matemática',
       },
       {
         id: 3,
@@ -33,7 +35,7 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 3.9,
-        aula: 'português',
+        aula: 'react',
       },
       {
         id: 4,
@@ -43,19 +45,46 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 3.3,
-        aula: 'português',
-      },
-    ],
+        aula: 'react',
+      },],
   };
 
+  handleInputChange = e => {
+    this.setState({ 
+      newUser: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    //Fazer a chamada à API aqui, buscando os dados
+    //Dentro do set state, setar o users:[] com os dados buscados
+
+    this.setState({
+      newUser: '',
+    })
+  }
+
   render() {
+    const { users, newUser, resultadoText } = this.state;
     return (
       <div>
         <div id="tituloContainer">
-          <label>Resultados de pesquisa para Português</label>
+          <img src={proffLogo}/>
+          <form id="submitContainer" onSubmit={this.handleSubmit}>
+            <input type="text" 
+              placeholder="Busque Aqui um Curso"
+              value={newUser}
+              onChange={this.handleInputChange}
+            />
+            <div id="submitButton">
+              <button type="submit"/>
+            </div>
+          </form>
         </div>
         <ul id="pesquisaList">
-          {this.state.users.map((user) => (
+          {users.map((user) => (
             <User key={user} user={user} />
           ))}
         </ul>

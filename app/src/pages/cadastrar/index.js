@@ -58,12 +58,13 @@ const FormBackground = styled.div`
   border-radius: 16px;
   width: 480px;
   height: 100%;
-  padding: 40px;
+  padding: 10px 0px 50px 0px;
 `;
 
 const FormText = styled.div`
-  font-size: 18px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  font-size:1vw;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   align-self: flex-start;
   margin-top: 20px;
@@ -72,21 +73,19 @@ const FormText = styled.div`
 const FormField = styled.input`
   background-color: #fff;
   border-radius: 8px;
-  width: 95%;
+  width: 80%;
+  margin-left:7%;
   margin-top: 10px;
   outline: none;
-  font: 18px Arial;
-  font-weight: bold;
-  padding-right: 8px;
-  padding-left: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  color:#262626;
+  font-family: 1vw Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px 8px 4px 8px;
 `;
 
 const FormFragment = styled.div`
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 80%;
 `;
 
 const Title = styled.div`
@@ -99,7 +98,7 @@ const Title = styled.div`
 
 const Button = styled.button`
   margin: 16px;
-  font: 24px Arial;
+  font:1vw Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
   text-decoration: none;
   height: 42px;
@@ -329,7 +328,7 @@ export default function Cadastrar() {
               setHaveChosen(false);
             }}
           >
-            voltar
+            Voltar
           </Button>
         </FormContainer>
       </>
@@ -366,7 +365,7 @@ export default function Cadastrar() {
               setHaveChosen(false);
             }}
           >
-            voltar
+            Voltar
           </Button>
         </FormContainer>
       </>
