@@ -32,13 +32,13 @@ class Home extends Component {
 
             <div>
               <h2>Seja um Professor</h2>
-              <p1>
+              <div>
                 Seja um agente de transformação do conhecimento.
                 <br /> Há nesse momento diversos alunos que precisam de sua
                 <br /> ajuda. Seu desafio será transmitir, de forma clara
                 <br /> e compreensível, o conteúdo para o aluno.
                 <br /> Seja o elo entre o indivíduo e o saber.
-              </p1>
+              </div>
             </div>
           </div>
 
@@ -66,25 +66,25 @@ class Home extends Component {
             <div>
               <img src={matematica} alt="Matemática" />
               <h4>Matemática</h4>
-                 
+
               <img src={portugues} alt="Português" />
               <h4>Português</h4>
             </div>
 
             <div>
               <img src={historia} alt="História" />
-              <h4 class="img-historia">História</h4>
+              <h4 className="img-historia">História</h4>
 
               <img src={ingles} alt="Inglês" />
-              <h4 class="img-right">Inglês</h4>
+              <h4 className="img-right">Inglês</h4>
             </div>
 
             <div>
               <img src={geografia} alt="Geografia" />
               <h4>Geografia</h4>
 
-              <img  src={fisica} alt="Física" />
-              <h4 class="img-right">Física</h4>
+              <img src={fisica} alt="Física" />
+              <h4 className="img-right">Física</h4>
             </div>
 
             <div>
