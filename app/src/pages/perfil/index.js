@@ -100,7 +100,7 @@ export default function Perfil() {
             <ImagemContainer>
               <Imagem src={avatar} />
               <Column>
-                <UserName>Ola, {userState.name}!</UserName>
+                <UserName>Olá, {userState.name}!</UserName>
                 <Rating>★★★★★</Rating>
               </Column>
             </ImagemContainer>
