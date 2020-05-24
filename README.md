@@ -1,21 +1,18 @@
 <h1>Projeto Professor Online</h1>
 
-Projeto em que um tuto/professor entra como voluntário para ensinar sobre a área que domina, com intuito de ajudar algum aluno que deseja aprender aquele determinado assunto.
+Projeto em que um tutor/professor entra como voluntário 
+para ensinar sobre a área que domina, com intuito de ajudar 
+algum aluno que deseja aprender aquele determinado assunto. 
+Nessa quarentena é cada vez mais importante levar 
+educação de qualidade, pois há diversos estudantes sem aulas.
 
-<h2>Algumas funcionalidades a serem implementadas:</h2>
+<img src="./app/public/professorOnline-min.png"/>
 
-- Utilizar API do Google Calendar para alerta
-- Usuário ganha pontos em algum sistema de Gamification
-- Colocar classificação do Professor
-- Utilizar API para chat diretamente pelo site
-- Separar as telas do site
+<h2>Missão:</h2>
 
-<h3>Tabelas:</h3>
-
-- Aluno
-- Professor
-- Cursos
-
+<pre>
+  Nossa missão é a de ajudar professores que desejam se voluntariar e dar aulas para ajudar alunos que estão há procura daquele determinado assunto. 
+</pre>
 
 <h3>Telas:</h3>
 
