@@ -40,7 +40,7 @@ footer {
   margin-top: 12px;
 }
 
-#link:hover {
+#linksContainer a:hover {
   color: #eb423f;
 }
 
@@ -63,4 +63,5 @@ label {
 
 .logos-social:hover {
   transform: scale(1.2);
+  cursor: pointer;
 }
