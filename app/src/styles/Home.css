@@ -47,14 +47,18 @@ main input{
 
 #exemplo-professor h2{
     font-weight: bold;
+    padding-bottom: 15px;
     
 }
 
-#exemplo-professor p{
+#exemplo-professor p1{
     line-height: 1.3;
-    text-align: right;
+    text-align: left;
 }
 
+p1{
+    text-align: left;
+}
 
 #exemplo-aluno{
     background-color: #F3F3F3;
