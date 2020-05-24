@@ -12,7 +12,9 @@ domina, com intuito de ajudar algum aluno que deseja aprender aquele determinado
 <h2><strong>Missão:</strong></h2>
 
 <pre><em>
-  Nossa missão é a de ajudar professores que desejam se voluntariar e dar aulas com o intuito de ajudar alunos que estão há procura daquele determinado assunto. Nosso sistmea de metrificação foi pensado para que os alunos sempre saibam qual professor é o mais bem avaliado da área em que deseja ter aula. Além disso, os professores tem a oportunidade de ser o elo entre o indivíduo e o saber.</em>
+  Nossa missão é a de ajudar professores que desejam se voluntariar e dar aulas com o intuito de ajudar alunos que estão há procura daquele determinado assunto. 
+  
+  Nosso sistmea de metrificação foi pensado para que os alunos sempre saibam qual professor é o mais bem avaliado da área em que deseja ter aula. Além disso, os professores tem a oportunidade de ser o elo entre o indivíduo e o saber.</em>
 </pre>
 
 <h3>Telas:</h3>
@@ -47,7 +49,7 @@ domina, com intuito de ajudar algum aluno que deseja aprender aquele determinado
 
     Aqui você pode dar aula e ser avaliado por nossos alunos, num sistema de metrificação elaborado para que professores com aulas que mais se destacam sejam mais visíveis pelos usuários da nossa plataforma
 
-    E você que deseja aprender ou relembrar assuntos nas diversas disciplinas de nosso catálogo como: *Física, Matemática, Português, Sociologia, etc.* 
+    E você que deseja aprender ou relembrar assuntos nas diversas disciplinas de nosso catálogo como: <i>Física, Matemática, Português, Sociologia, etc.</i> 
     
     
     Se cadastre agora!!! E tenha acesso à aulas dos nossos professores voluntários.

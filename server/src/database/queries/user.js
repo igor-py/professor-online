@@ -23,6 +23,10 @@ const deleteTagsByUserId = (userId) => `
   DELETE FROM public.userTags WHERE userId = ${userId}
 `;
 
+const getTagsByUserId = (userId) => `
+  SELECT * FROM public.userTags WHERE userId = ${userId}
+`;
+
 const getUserById = (id) => `SELECT * FROM public.users WHERE Id = ${id}`;
 
 const getUserByEmail = (email) =>
@@ -43,4 +47,5 @@ export const queries = {
   getUserByEmail,
   checkForExistingUser,
   getUserIdsByTagIds,
+  getTagsByUserId,
 };
