@@ -19,7 +19,7 @@ export default class Pesquisa extends Component {
         turn: 'manhã',
         rating: 5,
         aula: 'Português',
-        uniqueAula: 'portugues'
+        uniqueAula: 'portugues',
       },
       {
         id: 2,
@@ -28,9 +28,9 @@ export default class Pesquisa extends Component {
         password: '12345',
         isTeacher: true,
         turn: 'tarde',
-        rating: 4.3,
+        rating: 5,
         aula: 'Matemática',
-        uniqueAula: 'matematica'
+        uniqueAula: 'matematica',
       },
       {
         id: 3,
@@ -41,7 +41,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 3.9,
         aula: 'React',
-        uniqueAula: 'react'
+        uniqueAula: 'react',
       },
       {
         id: 4,
@@ -52,7 +52,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 3.3,
         aula: 'React',
-        uniqueAula: 'react'
+        uniqueAula: 'react',
       },
       {
         id: 5,
@@ -63,7 +63,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 3.3,
         aula: 'React',
-        uniqueAula: 'react'
+        uniqueAula: 'react',
       },
       {
         id: 6,
@@ -74,7 +74,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 5,
         aula: 'Digital Influencer',
-        uniqueAula: 'digital influencer'
+        uniqueAula: 'digital influencer',
       },
       {
         id: 7,
@@ -85,7 +85,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 4.3,
         aula: 'Digital Influencer',
-        uniqueAula: 'digital influencer'
+        uniqueAula: 'digital influencer',
       },
       {
         id: 8,
@@ -96,7 +96,7 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 3.9,
         aula: 'Relacionamentos',
-        uniqueAula: 'relacionamentos'
+        uniqueAula: 'relacionamentos',
       },
       {
         id: 9,
@@ -107,8 +107,9 @@ export default class Pesquisa extends Component {
         turn: 'tarde',
         rating: 3.3,
         aula: 'Políticas Públicas',
-        uniqueAula: 'politicas publicas'
-      }]
+        uniqueAula: 'politicas publicas',
+      },
+    ],
   };
 
   handleInputChange = (e) => {
@@ -120,12 +121,14 @@ export default class Pesquisa extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { newUser, storageUsers } = this.state
+    const { newUser, storageUsers } = this.state;
 
     const response = storageUsers.filter(
-      user => user.uniqueAula === StringUtils.replaceAllSpecialCharactersAndSetLowerCase(newUser) 
-      && user.isTeacher === true
-    )
+      (user) =>
+        user.uniqueAula ===
+          StringUtils.replaceAllSpecialCharactersAndSetLowerCase(newUser) &&
+        user.isTeacher === true
+    );
 
     this.setState({
       users: [...response],
