@@ -73,9 +73,16 @@ export const RightContainer = styled.div`
   flex: 3;
 `;
 
-export const Line = styled.div`
+export const VerticalLine = styled.div`
   width: 1px;
   height: 100%;
+  background-color: #999;
+  border: 1px solid #999;
+`;
+
+export const HorizontalLine = styled.div`
+  width: 100%;
+  height: 1px;
   background-color: #999;
   border: 1px solid #999;
 `;
@@ -99,4 +106,46 @@ export const EmailContainer = styled.div`
 export const MessagesHeader = styled.div`
   font: 32px Arial;
   color: #111;
+`;
+
+export const MessagesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+`;
+
+export const MessageContainer = styled.div`
+  padding: 8px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 100px;
+  width: 100%;
+`;
+
+export const MessageTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MessageText = styled.div`
+  margin: 10px 0 0 10px;
+  font: 18px Arial;
+  color: #111;
+`;
+
+export const MessageTitle = styled.div`
+  margin: 10px 0 0 10px;
+  font: 24px Arial;
+  font-weight: bold;
+  color: #111;
+`;
+
+export const MessageAvatar = styled.img`
+  height: 80px;
+  width: 80px;
+  border: 2px solid #b66;
+  border-radius: 40px;
 `;

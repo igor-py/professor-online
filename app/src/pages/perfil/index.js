@@ -14,8 +14,15 @@ import {
   UserInfo,
   BoldText,
   EmailContainer,
-  Line,
+  VerticalLine,
+  HorizontalLine,
+  MessagesContainer,
   MessagesHeader,
+  MessageContainer,
+  MessageTextContainer,
+  MessageTitle,
+  MessageText,
+  MessageAvatar,
 } from './styles';
 
 const categoryArray = [
@@ -45,7 +52,7 @@ export default function Perfil() {
   function renderStudentInfo() {
     return (
       <UserInfo>
-        Voce esta cadastrado como estudante. Procure por professores para marcar
+        Você está cadastrado como estudante. Procure por professores para marcar
         uma aula!
         <EmailContainer>
           <BoldText>Email cadastrado:</BoldText>
@@ -58,7 +65,7 @@ export default function Perfil() {
   function renderTeacherInfo() {
     return (
       <UserInfo>
-        Voce esta cadastrado como professor.
+        Você está cadastrado como professor.
         <EmailContainer>
           <BoldText>Email cadastrado:</BoldText>
           {` ${userState.email}`}
@@ -93,15 +100,44 @@ export default function Perfil() {
             <ImagemContainer>
               <Imagem src={avatar} />
               <Column>
-                <UserName>Ola, {userState.name}!</UserName>
+                <UserName>Olá, {userState.name}!</UserName>
                 <Rating>★★★★★</Rating>
               </Column>
             </ImagemContainer>
             {userState.isteacher ? renderTeacherInfo() : renderStudentInfo()}
           </LeftContainer>
-          <Line />
+          <VerticalLine />
           <RightContainer>
-            <MessagesHeader>Ultimas Mensagens</MessagesHeader>
+            <MessagesHeader>Últimas Mensagens</MessagesHeader>
+            <MessagesContainer>
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava1" />
+                <MessageTextContainer>
+                  <MessageTitle>Igor Marins</MessageTitle>
+                  <MessageText>
+                    > Oi, Douglas! Podemos marcar uma aula?
+                  </MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+              <HorizontalLine />
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava2" />
+                <MessageTextContainer>
+                  <MessageTitle>Vitor Santos</MessageTitle>
+                  <MessageText>
+                    > Obrigado pela aula de ontem, muito boa!
+                  </MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+              <HorizontalLine />
+              <MessageContainer>
+                <MessageAvatar src={avatar} alt="ava3" />
+                <MessageTextContainer>
+                  <MessageTitle>Leandro</MessageTitle>
+                  <MessageText>> Para mim eh melhor de manha :(</MessageText>
+                </MessageTextContainer>
+              </MessageContainer>
+            </MessagesContainer>
           </RightContainer>
         </InnerContainer>
       </Pagecontainer>
