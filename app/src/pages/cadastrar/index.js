@@ -11,13 +11,14 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   flex: 1;
+  margin:10% 20% 0% 20%;
 `;
 
 const Image = styled.img`
   border: 2px solid #999;
-  border-radius: 140px;
-  height: 280px;
-  width: 280px;
+  border-radius: 150px;
+  height: 13vw;
+  width:13vw ;
 `;
 
 const Icon = styled.img`
@@ -58,7 +59,8 @@ const FormBackground = styled.div`
 `;
 
 const FormText = styled.div`
-  font: 18px Arial;
+  font-size:18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   align-self: flex-start;
   margin-top: 20px;
@@ -85,9 +87,11 @@ const FormFragment = styled.div`
 `;
 
 const Title = styled.div`
-  font: 36px Arial;
-  font-weight: bold;
+  font:1.5vw Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
   margin-bottom: 16px;
+  text-align: center;
+  margin-left:20px;
 `;
 
 const Button = styled.button`
