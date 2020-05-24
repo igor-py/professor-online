@@ -1,40 +1,45 @@
-import React, { useState } from 'react';
-import {ImagemContainer, Container, ContainerH1,
-H1, Botao, Main, Imagem} from './styles';
-
-
+import React, { useState, useEffect } from 'react';
+import avatar from '../../images/avatar.png';
+import { getCookie, eraseCookie, setCookie } from '../../utils/cookies';
+import {
+  ImagemContainer,
+  Container,
+  ContainerH1,
+  H1,
+  Botao,
+  Main,
+  Imagem,
+  Pagecontainer,
+  InnerContainer,
+  UserName,
+  Column,
+  Rating,
+} from './styles';
 
 export default function Perfil() {
+  const [userState, setUserState] = useState({});
 
-    function renderLogged() {
+  useEffect(() => {
+    const user = JSON.parse(getCookie('user'));
+    console.log(user);
+    setUserState(user);
+  }, []);
 
-        return (
+  function renderLogged() {
+    return (
+      <Pagecontainer>
+        <InnerContainer>
+          <ImagemContainer>
+            <Imagem src={avatar} />
+            <Column>
+              <UserName>Ola, {userState.name}!</UserName>
+              <Rating>★★★★★</Rating>
+            </Column>
+          </ImagemContainer>
+        </InnerContainer>
+      </Pagecontainer>
+    );
+  }
 
-            <>
-                <ImagemContainer>
-                    <H1>Avatar</H1>
-                    <Imagem src="https://img.icons8.com/color/48/000000/ninja-turtle.png" />
-                </ImagemContainer>
-                
-                <Container>
-                    <Main>
-                        <ContainerH1>
-                            <H1>Igor Marins</H1>
-
-                            <H1>Professor</H1>
-                        </ContainerH1>
-
-                        <H1>★★★★★</H1>
-
-                        <Botao onClick={() => { alert('Mudar informações do perfil') }}>Editar Perfil</Botao>
-                        <Botao onClick={() => { alert('Mudar Avatar') }}>Mudar Avatar</Botao>
-                    </Main>
-                </Container>
-            </>
-        )
-    };
-
-    return renderLogged();
-
+  return renderLogged();
 }
-
