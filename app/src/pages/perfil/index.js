@@ -104,40 +104,48 @@ export default function Perfil() {
                 <Rating>★★★★★</Rating>
               </Column>
             </ImagemContainer>
-            {userState.isteacher ? renderTeacherInfo() : renderStudentInfo()}
+            {userState.isteacher === 'true'
+              ? renderTeacherInfo()
+              : renderStudentInfo()}
           </LeftContainer>
           <VerticalLine />
           <RightContainer>
             <MessagesHeader>Últimas Mensagens</MessagesHeader>
-            <MessagesContainer>
-              <MessageContainer>
-                <MessageAvatar src={avatar} alt="ava1" />
-                <MessageTextContainer>
-                  <MessageTitle>Igor Marins</MessageTitle>
-                  <MessageText>
-                    > Oi, Douglas! Podemos marcar uma aula?
-                  </MessageText>
-                </MessageTextContainer>
-              </MessageContainer>
-              <HorizontalLine />
-              <MessageContainer>
-                <MessageAvatar src={avatar} alt="ava2" />
-                <MessageTextContainer>
-                  <MessageTitle>Vitor Santos</MessageTitle>
-                  <MessageText>
-                    > Obrigado pela aula de ontem, muito boa!
-                  </MessageText>
-                </MessageTextContainer>
-              </MessageContainer>
-              <HorizontalLine />
-              <MessageContainer>
-                <MessageAvatar src={avatar} alt="ava3" />
-                <MessageTextContainer>
-                  <MessageTitle>Leandro</MessageTitle>
-                  <MessageText>> Para mim eh melhor de manha :(</MessageText>
-                </MessageTextContainer>
-              </MessageContainer>
-            </MessagesContainer>
+            {userState.isteacher === 'true' ? (
+              <MessagesContainer>
+                <MessageContainer>
+                  <MessageAvatar src={avatar} alt="ava1" />
+                  <MessageTextContainer>
+                    <MessageTitle>Igor Marins</MessageTitle>
+                    <MessageText>
+                      > Oi, Douglas! Podemos marcar uma aula?
+                    </MessageText>
+                  </MessageTextContainer>
+                </MessageContainer>
+                <HorizontalLine />
+                <MessageContainer>
+                  <MessageAvatar src={avatar} alt="ava2" />
+                  <MessageTextContainer>
+                    <MessageTitle>Vitor Santos</MessageTitle>
+                    <MessageText>
+                      > Obrigado pela aula de ontem, muito boa!
+                    </MessageText>
+                  </MessageTextContainer>
+                </MessageContainer>
+                <HorizontalLine />
+                <MessageContainer>
+                  <MessageAvatar src={avatar} alt="ava3" />
+                  <MessageTextContainer>
+                    <MessageTitle>Leandro</MessageTitle>
+                    <MessageText>> Para mim eh melhor de manha :(</MessageText>
+                  </MessageTextContainer>
+                </MessageContainer>
+              </MessagesContainer>
+            ) : (
+              <div style={{ marginTop: '40px' }}>
+                Nenhuma mensagem encontrada
+              </div>
+            )}
           </RightContainer>
         </InnerContainer>
       </Pagecontainer>
