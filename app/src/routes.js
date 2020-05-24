@@ -1,23 +1,30 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import SejaUmProfessorPage from './pages/seja-um-professor';
-import InscrevaSe from './pages/inscreva-se';
-import Professor from './pages/inscreva-se/professor';
-import Aluno from './pages/inscreva-se/aluno';
-import Home from './Components/Home';
+import styled from 'styled-components';
+import InscrevaSe from './pages/cadastrar';
+import Home from './pages/home';
 import Pesquisa from './pages/pesquisa';
+import Entrar from './pages/entrar';
+import Header from '../src/Components/Header';
+import Footer from '../src/Components/Footer';
+
+const PageContainer = styled.div`
+  min-height: 80vh;
+`;
 
 export default function Routes() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/sejaumprofessor" component={SejaUmProfessorPage} />
-        <Route path="/cadastrar" component={InscrevaSe} />
-        <Route path="/pesquisa" component={Pesquisa} />
-        <Route path="/inscreva-aluno" component={Aluno} />
-        <Route path="/inscreva-professor" component={Professor} />
-      </Switch>
+      <Header />
+      <PageContainer>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/entrar" component={Entrar} />
+          <Route path="/cadastrar" component={InscrevaSe} />
+          <Route path="/pesquisa" component={Pesquisa} />
+        </Switch>
+      </PageContainer>
+      <Footer />
     </BrowserRouter>
   );
 }
