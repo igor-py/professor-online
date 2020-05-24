@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
-import InscrevaSe from './pages/cadastrar';
+import Cadastrar from './pages/cadastrar';
 import Home from './pages/home';
 import Pesquisa from './pages/pesquisa';
 import Header from '../src/Components/Header';
@@ -18,7 +18,7 @@ export default function Routes() {
       <PageContainer>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/cadastrar" component={InscrevaSe} />
+          <Route path="/cadastrar" component={Cadastrar} />
           <Route path="/pesquisa" component={Pesquisa} />
         </Switch>
       </PageContainer>
