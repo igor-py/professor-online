@@ -22,7 +22,6 @@ const Image = styled.img`
   border-radius: 150px;
   height: 13vw;
   width: 13vw;
-  
 `;
 
 const Icon = styled.img`
@@ -73,9 +72,8 @@ const FormBackground = styled.div`
 `;
 
 const FormText = styled.div`
-
-  font-size:1vw;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #fff;
   align-self: flex-start;
   margin-top: 20px;
@@ -85,10 +83,10 @@ const FormField = styled.input`
   background-color: #fff;
   border-radius: 8px;
   width: 80%;
-  margin-left:7%;
+  margin-left: 7%;
   margin-top: 10px;
   outline: none;
-  color:#262626;
+  color: #262626;
   font-family: 1vw Verdana, Geneva, Tahoma, sans-serif;
   padding: 4px 8px 4px 8px;
 `;
@@ -116,7 +114,7 @@ const Title = styled.div`
 
 const Button = styled.button`
   margin: 16px;
-  font:1vw Verdana, Geneva, Tahoma, sans-serif;
+  font: 1vw Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
   text-decoration: none;
   height: 42px;
@@ -126,14 +124,14 @@ const Button = styled.button`
 
   &:hover {
     background-color: #d13330;
-    color:white;
+    color: white;
     cursor: pointer;
   }
 `;
 
 const SubmmitButton = styled.button`
   background-color: #222;
-  margin-top:10%;
+  margin-top: 10%;
   font: 1.1vw Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
   text-decoration: none;
@@ -142,18 +140,18 @@ const SubmmitButton = styled.button`
   border: 2px solid #fff;
   border-radius: 8px;
   transition: all 0.8s;
-  color:white;
+  color: white;
 
   &:hover {
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
     cursor: pointer;
-    color:#262626;
+    color: #262626;
   }
 `;
 
 const Select = styled.select`
   margin: 16px 16px 0 16px;
-  font:0.8vw Verdana, Geneva, Tahoma, sans-serif;
+  font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
   border: 2px solid #fff;
   border-radius: 4px;
   background-color: #222;
@@ -184,7 +182,7 @@ export default function Cadastrar() {
 
     console.log('login ', response);
 
-    setCookie('user', String(response.data.user), 7);
+    setCookie('user', JSON.stringify(response.data.user), 7);
     setCookie('auth', response.data.token, 7);
     window.location.reload();
     window.location.href = '/';
@@ -268,6 +266,7 @@ export default function Cadastrar() {
 
   function renderOptions() {
     return (
+
       <Container1>
         <Container>
           <EntityContainer

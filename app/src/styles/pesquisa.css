@@ -5,6 +5,12 @@
   margin-top: 40px;
 }
 
+#infoPesquisaContainer #logoContainer img {
+  padding-top: 15px;
+  width: 40px;
+  height: 40px;
+}
+
 #tituloContainer label{
   font-size: 30px;
   padding-top: 30px;
@@ -85,4 +91,13 @@ p {
   border-radius: 7px;
   background: rgba(0, 0, 0, 0.849);
   color: white;
+}
+
+#actionContainer button:hover {
+  transform: scale(1.02);
+  color: #eb6361;
+}
+
+#actionContainer button:focus {
+  outline: none;
 }
