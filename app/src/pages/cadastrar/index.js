@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import professor from '../../images/professor-eis.png';
 import student from '../../images/student.png';
+import professor2 from '../../images/professor.png';
 
 const Container = styled.div`
   margin-top: 40px;
@@ -19,6 +20,12 @@ const Image = styled.img`
   width: 280px;
 `;
 
+const Icon = styled.img`
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+`;
+
 const EntityContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -30,6 +37,44 @@ const EntityContainer = styled.div`
     opacity: 0.5;
     cursor: pointer;
   }
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const FormBackground = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222;
+  border-radius: 16px;
+  width: 400px;
+  height: 100%;
+  padding: 40px;
+`;
+
+const FormText = styled.div`
+  font: 18px Arial;
+  color: #fff;
+  align-self: flex-start;
+  margin-top: 20px;
+`;
+
+const FormField = styled.input`
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 10px;
+  outline: none;
+`;
+
+const FormFragment = styled.div`
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `;
 
 const Title = styled.div`
@@ -78,7 +123,28 @@ export default function Cadastrar() {
         >
           voltar
         </button>
-        <div>professor</div>
+        <FormContainer>
+          <Icon src={professor2} alt="professor 2" />
+          <Title>Olá, professor!</Title>
+          <FormBackground>
+            <FormFragment>
+              <FormText>Nome:</FormText>
+              <FormField />
+            </FormFragment>
+            <FormFragment>
+              <FormText>E-mail:</FormText>
+              <FormField />
+            </FormFragment>
+            <FormFragment>
+              <FormText>Senha:</FormText>
+              <FormField />
+            </FormFragment>
+            <FormFragment>
+              <FormText>Turno:</FormText>
+              <FormField />
+            </FormFragment>
+          </FormBackground>
+        </FormContainer>
       </>
     );
   }
@@ -93,7 +159,24 @@ export default function Cadastrar() {
         >
           voltar
         </button>
-        <div>student</div>
+        <FormContainer>
+          <Icon src={professor2} alt="professor 2" />
+          <Title>Olá, aluno!</Title>
+          <FormBackground>
+            <FormFragment>
+              <FormText>Nome:</FormText>
+              <FormField />
+            </FormFragment>
+            <FormFragment>
+              <FormText>E-mail:</FormText>
+              <FormField />
+            </FormFragment>
+            <FormFragment>
+              <FormText>Senha:</FormText>
+              <FormField />
+            </FormFragment>
+          </FormBackground>
+        </FormContainer>
       </>
     );
   }
