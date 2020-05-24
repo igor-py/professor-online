@@ -177,6 +177,12 @@ export default function Cadastrar() {
     const name = document.getElementById('s-name').value;
     const email = document.getElementById('s-email').value;
     const password = document.getElementById('s-pw').value;
+    const passwordConfirmation = document.getElementById('s-cpw').value;
+
+    if (password !== passwordConfirmation) {
+      alert('Confirmação de senha incorreta!');
+      return;
+    }
 
     try {
       response = await axios({
@@ -208,8 +214,14 @@ export default function Cadastrar() {
     const name = document.getElementById('p-name').value;
     const email = document.getElementById('p-email').value;
     const password = document.getElementById('p-pw').value;
+    const passwordConfirmation = document.getElementById('p-cpw').value;
     const turn = document.getElementById('turn').value;
     const tags = Number(document.getElementById('tag').value);
+
+    if (password !== passwordConfirmation) {
+      alert('Confirmação de senha incorreta!');
+      return;
+    }
 
     try {
       response = await axios({
@@ -281,6 +293,10 @@ export default function Cadastrar() {
               <FormField id="p-pw" type="password" />
             </FormFragment>
             <FormFragment>
+              <FormText>Confirme sua senha:</FormText>
+              <FormField id="p-cpw" type="password" />
+            </FormFragment>
+            <FormFragment>
               <FormText>Turno:</FormText>
               <Select id="turn" name="turnos">
                 <option value="manha">manha</option>
@@ -338,6 +354,10 @@ export default function Cadastrar() {
             <FormFragment>
               <FormText>Senha:</FormText>
               <FormField id="s-pw" type="password" />
+            </FormFragment>
+            <FormFragment>
+              <FormText>Confirme sua senha:</FormText>
+              <FormField id="s-cpw" type="password" />
             </FormFragment>
             <SubmmitButton onClick={cadastrarAluno}>Cadastrar</SubmmitButton>
           </FormBackground>
