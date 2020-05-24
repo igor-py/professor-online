@@ -45,6 +45,14 @@ main input{
     
 }
 
+h2{
+    padding-bottom: 15px;
+}
+
+p1{
+    text-align: left;
+}
+
 #exemplo-professor h2{
     font-weight: bold;
     
