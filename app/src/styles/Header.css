@@ -57,9 +57,9 @@
   border-radius: 12px;
   border-width: 1px;
   border: solid #dcdcdc;
-  margin: 150px 0% 0% 70%;
+  margin: 9.2% 0% 0% 70%;
   width: 20%;
-  height: 270px;
+  height: 15vw;
   background-color: #262626;
 }
 
@@ -67,14 +67,14 @@
 h3 {
   color: white;
   padding: 5%;
+  font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dropdown-content input {
   margin-left: 14%;
-  border-radius: 6px;
-  width: 70%;
-  font: 18px Arial;
-  font-weight: bold;
+  border-radius: 7px;
+  width: 65%;
+  font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
   padding-right: 8px;
   padding-left: 8px;
   padding-top: 4px;
@@ -83,11 +83,11 @@ h3 {
 
 .dropdown-content button {
   cursor: pointer;
-  margin-left: 32%;
+  margin-left: 35%;
   margin-top: 40px;
   background-color: #262626;
   transition: all 0.5s;
-  font: 18px Arial;
+  font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dropdown-content button span {
@@ -95,7 +95,7 @@ h3 {
   display: inline-block;
   position: relative;
   transition: 0.5s;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dropdown-content button span:after {
