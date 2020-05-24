@@ -23,14 +23,14 @@ export default function Header() {
 
   const history = useHistory();
 
-  const routeChange = () => {
-    let path = `/`;
-    history.push(path);
-  };
+  function redirectToHome() {
+    history.push('/');
+  }
 
   function logOut() {
     eraseCookie('auth');
     setCookieState('');
+    redirectToHome();
   }
 
   function logIn() {
@@ -38,6 +38,7 @@ export default function Header() {
     const cookie = getCookie('auth');
     setCookieState(cookie);
     toogleDropdown();
+    redirectToHome();
   }
 
   function renderUnloggedOptions() {
@@ -59,8 +60,12 @@ export default function Header() {
         <label className="links-header" onClick={logOut}>
           Log out
         </label>
-        <label className="links-header">Pesquisar Professores</label>
-        <label className="links-header">Perfil</label>
+        <Link to="/pesquisa" className="links-header">
+          Pesquisar Professores
+        </Link>
+        <Link to="/perfil" className="links-header">
+          Perfil
+        </Link>
       </div>
     );
   }
@@ -71,7 +76,7 @@ export default function Header() {
 
   return (
     <div id="headerContainer">
-      <div id="logoContainer" onClick={routeChange}>
+      <div id="logoContainer" onClick={redirectToHome}>
         <img src={professor} alt="Professor Online" />
       </div>
       {isLogged ? renderLoggedOptions() : renderUnloggedOptions()}
