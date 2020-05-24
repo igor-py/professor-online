@@ -1,14 +1,14 @@
 <h1>Projeto Professor Online</h1>
 
-Projeto em que um tutor/professor entra como voluntário 
-para ensinar sobre a área que domina, com intuito de ajudar 
-algum aluno que deseja aprender aquele determinado assunto. 
-Nessa quarentena é cada vez mais importante levar 
-educação de qualidade, pois há diversos estudantes sem aulas.
+<p>Projeto em que um <em>Tutor ou Professor</em> 
+entra como voluntário para ensinar sobre a área que 
+domina, com intuito de ajudar algum aluno que deseja aprender aquele determinado assunto. Nessa quarentena é cada vez mais importante levar educação de qualidade, pois há diversos estudantes sem aulas.</p>
 
-<img src="./app/public/professorOnline-min.png"/>
+<img src="./app/public/pag1.png"/>
+<img src="./app/public/pag2.png"/>
+<img src="./app/public/pag3.png"/>
 
-<h2>Missão:</h2>
+<h2><strong>Missão:</strong></h2>
 
 <pre>
   Nossa missão é a de ajudar professores que desejam se voluntariar e dar aulas para ajudar alunos que estão há procura daquele determinado assunto. 
