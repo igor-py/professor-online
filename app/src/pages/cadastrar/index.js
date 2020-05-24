@@ -49,9 +49,10 @@ const FormBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #222;
   border-radius: 16px;
-  width: 400px;
+  width: 480px;
   height: 100%;
   padding: 40px;
 `;
@@ -66,9 +67,15 @@ const FormText = styled.div`
 const FormField = styled.input`
   background-color: #fff;
   border-radius: 8px;
-  width: 100%;
+  width: 95%;
   margin-top: 10px;
   outline: none;
+  font: 18px Arial;
+  font-weight: bold;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 `;
 
 const FormFragment = styled.div`
@@ -81,6 +88,22 @@ const Title = styled.div`
   font: 36px Arial;
   font-weight: bold;
   margin-bottom: 16px;
+`;
+
+const Button = styled.button`
+  margin: 16px;
+  font: 24px Arial;
+  outline: none;
+  text-decoration: none;
+  height: 42px;
+  width: 90px;
+  border-radius: 21px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #555;
+    cursor: pointer;
+  }
 `;
 
 export default function Cadastrar() {
@@ -116,13 +139,6 @@ export default function Cadastrar() {
   function renderProfessorSignUp() {
     return (
       <>
-        <button
-          onClick={() => {
-            setHaveChosen(false);
-          }}
-        >
-          voltar
-        </button>
         <FormContainer>
           <Icon src={professor2} alt="professor 2" />
           <Title>Olá, professor!</Title>
@@ -144,6 +160,13 @@ export default function Cadastrar() {
               <FormField />
             </FormFragment>
           </FormBackground>
+          <Button
+            onClick={() => {
+              setHaveChosen(false);
+            }}
+          >
+            voltar
+          </Button>
         </FormContainer>
       </>
     );
@@ -152,13 +175,6 @@ export default function Cadastrar() {
   function renderStudentSignUp() {
     return (
       <>
-        <button
-          onClick={() => {
-            setHaveChosen(false);
-          }}
-        >
-          voltar
-        </button>
         <FormContainer>
           <Icon src={professor2} alt="professor 2" />
           <Title>Olá, aluno!</Title>
@@ -176,6 +192,13 @@ export default function Cadastrar() {
               <FormField />
             </FormFragment>
           </FormBackground>
+          <Button
+            onClick={() => {
+              setHaveChosen(false);
+            }}
+          >
+            voltar
+          </Button>
         </FormContainer>
       </>
     );
