@@ -15,9 +15,9 @@ export default function Footer() {
       </div>
       <div id="imagemCopiryghtContainer">
         <div id="imageContainer">
-          <img src={instagramLogo} alt="insta" />
-          <img src={facebookLogo} alt="face" />
-          <img src={twitterLogo} alt="twit" />
+          <img src={instagramLogo} alt="insta" className="logos-social"/>
+          <img src={facebookLogo} alt="face" className="logos-social"/>
+          <img src={twitterLogo} alt="twit" className="logos-social"/>
           <div id="copiryghtContainer">
             <label>© 2020 professor online</label>
           </div>
