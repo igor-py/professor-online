@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import professor from '../../images/professor-eis.png';
 import student from '../../images/student.png';
@@ -24,6 +24,7 @@ const EntityContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.5;
@@ -38,19 +39,70 @@ const Title = styled.div`
 `;
 
 export default function Cadastrar() {
-  return (
-    <>
+  const [haveChosen, setHaveChosen] = useState(false);
+  const [isProfessor, setIsProfessor] = useState();
+
+  function renderOptions() {
+    return (
       <Container>
-        <EntityContainer>
+        <EntityContainer
+          onClick={() => {
+            setHaveChosen(true);
+            setIsProfessor(true);
+          }}
+        >
           <Title>Sou um professor</Title>
           <Image src={professor} alt="professor"></Image>
         </EntityContainer>
 
-        <EntityContainer>
+        <EntityContainer
+          onClick={() => {
+            setHaveChosen(true);
+            setIsProfessor(false);
+          }}
+        >
           <Title>Sou um aluno</Title>
           <Image src={student} alt="student"></Image>
         </EntityContainer>
       </Container>
-    </>
-  );
+    );
+  }
+
+  function renderProfessorSignUp() {
+    return (
+      <>
+        <button
+          onClick={() => {
+            setHaveChosen(false);
+          }}
+        >
+          voltar
+        </button>
+        <div>professor</div>
+      </>
+    );
+  }
+
+  function renderStudentSignUp() {
+    return (
+      <>
+        <button
+          onClick={() => {
+            setHaveChosen(false);
+          }}
+        >
+          voltar
+        </button>
+        <div>student</div>
+      </>
+    );
+  }
+
+  function renderSignUp() {
+    return (
+      <> {isProfessor ? renderProfessorSignUp() : renderStudentSignUp()} </>
+    );
+  }
+
+  return <>{haveChosen ? renderSignUp() : renderOptions()}</>;
 }
