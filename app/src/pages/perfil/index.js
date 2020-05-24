@@ -14,6 +14,8 @@ import {
   UserInfo,
   BoldText,
   EmailContainer,
+  Line,
+  MessagesHeader,
 } from './styles';
 
 const categoryArray = [
@@ -97,8 +99,9 @@ export default function Perfil() {
             </ImagemContainer>
             {userState.isteacher ? renderTeacherInfo() : renderStudentInfo()}
           </LeftContainer>
+          <Line />
           <RightContainer>
-            <div>alou alou</div>
+            <MessagesHeader>Ultimas Mensagens</MessagesHeader>
           </RightContainer>
         </InnerContainer>
       </Pagecontainer>

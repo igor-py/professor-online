@@ -63,8 +63,6 @@ export const LeftContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  border-radius: 8px;
-  border: 2px solid lightgrey;
   margin-right: 8px;
 `;
 
@@ -73,8 +71,13 @@ export const RightContainer = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 3;
-  border-radius: 8px;
-  border: 2px solid lightgrey;
+`;
+
+export const Line = styled.div`
+  width: 1px;
+  height: 100%;
+  background-color: #999;
+  border: 1px solid #999;
 `;
 
 export const UserInfo = styled.div`
@@ -91,4 +94,9 @@ export const BoldText = styled.div`
 
 export const EmailContainer = styled.div`
   margin-top: 20px;
+`;
+
+export const MessagesHeader = styled.div`
+  font: 32px Arial;
+  color: #111;
 `;
