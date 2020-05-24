@@ -21,8 +21,6 @@ class Home extends Component {
         <main>
           <h1>Professor Online</h1>
 
-          <input type="text" placeholder="Busque Aqui um Curso" />
-
           <img
             src={business}
             id="imagem_principal"
