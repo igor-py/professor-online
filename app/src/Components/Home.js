@@ -45,7 +45,10 @@ class Home extends Component {
 
                         <div>
                             <h2>Seja um Professor</h2>
-                            <p>Seja um professor solidário em um<br/> momento em que há diversos estudantes<br/> precisando de você!</p>
+                            <p1>Seja um agente de transformação do conhecimento. Há nesse momento<br/> diversos alunos que precisam de sua
+                                ajuda. Seu desafio será transmitir,<br/> de forma clara e compreensível, o conteúdo para o aluno.<br/> Seja o 
+                                elo entre o indivíduo e o saber.
+                            </p1>
                         </div>
                         
                     </div>

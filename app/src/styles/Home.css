@@ -55,6 +55,9 @@ main input{
     text-align: right;
 }
 
+p1{
+    text-align: left;
+}
 
 #exemplo-aluno{
     background-color: #F3F3F3;
