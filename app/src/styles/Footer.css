@@ -10,6 +10,7 @@ footer {
   padding-right: 70px;
   justify-content: space-between;
   background: #262626;
+  min-height: 150px;
   height: 15vh;
 }
 

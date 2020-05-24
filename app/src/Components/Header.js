@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../styles/Header.css';
 import professor from '../images/professor.png';
 import { BrowserRouter as Link } from 'react-router-dom';
+import { getCookie } from '../utils/cookies';
 
 export default function Header() {
+  const [isLogged, setIsLogged] = useState();
+
+  useEffect(() => {
+    const cookie = getCookie('auth');
+    console.log('cookie ', cookie);
+    if (cookie) {
+      setIsLogged(true);
+    } else {
+      setIsLogged(false);
+    }
+  }, [isLogged]);
+
   const history = useHistory();
 
   const routeChange = () => {
@@ -12,7 +25,24 @@ export default function Header() {
     history.push(path);
   };
 
-  function myFunction() {
+  function RenderUnloggedOptions() {
+    return (
+      <div id="labelContainer">
+        <Link to="/cadastrar" className="links-header">
+          Cadastrar
+        </Link>
+        <label className="links-header" onClick={ShowDropdown}>
+          Entrar
+        </label>
+      </div>
+    );
+  }
+
+  function RenderLoggedOptions() {
+    return <div>logged in</div>;
+  }
+
+  function ShowDropdown() {
     document.getElementById('myDropdown').classList.toggle('show');
   }
 
@@ -21,14 +51,7 @@ export default function Header() {
       <div id="logoContainer" onClick={routeChange}>
         <img src={professor} alt="Professor Online" />
       </div>
-      <div id="labelContainer">
-        <Link to="/cadastrar" className="links-header">
-          Cadastrar
-        </Link>
-        <label className="links-header" onClick={myFunction}>
-          Entrar
-        </label>
-      </div>
+      {isLogged ? RenderLoggedOptions() : RenderUnloggedOptions()}
 
       <div id="myDropdown" className="dropdown-content">
         <div>
