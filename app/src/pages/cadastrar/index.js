@@ -261,9 +261,8 @@ export default function Cadastrar() {
           <Title>Olá, professor!</Title>
           <FormBackground>
             <FormFragment>
-              <FormField id="p-name" />
-
               <FormText placeholder="Coloque seu nome completo">Nome:</FormText>
+              <FormField id="p-name" />
             </FormFragment>
             <FormFragment>
               <FormText>E-mail:</FormText>
