@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import '../styles/Header.css';
 import professor from '../images/professor.png';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 export default function Header() {
   const history = useHistory();
@@ -13,8 +13,8 @@ export default function Header() {
   };
 
   function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  };
+    document.getElementById('myDropdown').classList.toggle('show');
+  }
 
   return (
     <div id="headerContainer">
@@ -25,7 +25,7 @@ export default function Header() {
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>
-        <Link to="" className="links-header" onClick = {myFunction}>
+        <Link to="" className="links-header" onClick={myFunction}>
           Entrar
         </Link>
       </div>
@@ -33,23 +33,18 @@ export default function Header() {
       <div id="myDropdown" className="dropdown-content">
         <div>
           <h3>E-mail</h3>
-          <input type= "text"/>
+          <input type="text" />
         </div>
 
         <div>
           <h3>Senha</h3>
-          <input type= "password"/>
+          <input type="password" />
         </div>
 
-        <button><span>Entrar</span></button>
-
-          
+        <button>
+          <span>Entrar</span>
+        </button>
       </div>
-
-      
     </div>
-
-
-
   );
 }
