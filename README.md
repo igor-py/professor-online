@@ -6,7 +6,7 @@ algum aluno que deseja aprender aquele determinado assunto.
 Nessa quarentena é cada vez mais importante levar 
 educação de qualidade, pois há diversos estudantes sem aulas.
 
-<img src="./app/public/logo512.png"/>
+<img src="./app/public/professorOnline-min.png"/>
 
 <h2>Missão:</h2>
 
