@@ -12,6 +12,10 @@ export default function Header() {
     history.push(path);
   };
 
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  };
+
   return (
     <div id="headerContainer">
       <div id="logoContainer" onClick={routeChange}>
@@ -21,10 +25,31 @@ export default function Header() {
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>
-        <Link to="/entrar" className="links-header">
+        <Link to="" className="links-header" onClick = {myFunction}>
           Entrar
         </Link>
       </div>
+
+      <div id="myDropdown" className="dropdown-content">
+        <div>
+          <h3>E-mail</h3>
+          <input type= "text"/>
+        </div>
+
+        <div>
+          <h3>Senha</h3>
+          <input type= "password"/>
+        </div>
+
+        <button><span>Entrar</span></button>
+
+          
+      </div>
+
+      
     </div>
+
+
+
   );
 }
