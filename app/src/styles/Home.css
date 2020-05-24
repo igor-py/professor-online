@@ -93,9 +93,18 @@ main input{
 }
 
 #fundo-logos h4{
-    padding-top: 10px;
+    padding-top: 12px;
 }
 
 #fundo-logos img{
     padding-top: 70px;
 }
+
+.img-right{
+    padding-left: 14px;
+}
+
+.img-historia{
+    padding-left: 10px;
+}
+
