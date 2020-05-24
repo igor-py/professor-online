@@ -52,7 +52,7 @@ export default function Perfil() {
   function renderStudentInfo() {
     return (
       <UserInfo>
-        Voce esta cadastrado como estudante. Procure por professores para marcar
+        Você está cadastrado como estudante. Procure por professores para marcar
         uma aula!
         <EmailContainer>
           <BoldText>Email cadastrado:</BoldText>
@@ -65,7 +65,7 @@ export default function Perfil() {
   function renderTeacherInfo() {
     return (
       <UserInfo>
-        Voce esta cadastrado como professor.
+        Você está cadastrado como professor.
         <EmailContainer>
           <BoldText>Email cadastrado:</BoldText>
           {` ${userState.email}`}
@@ -108,7 +108,7 @@ export default function Perfil() {
           </LeftContainer>
           <VerticalLine />
           <RightContainer>
-            <MessagesHeader>Ultimas Mensagens</MessagesHeader>
+            <MessagesHeader>Últimas Mensagens</MessagesHeader>
             <MessagesContainer>
               <MessageContainer>
                 <MessageAvatar src={avatar} alt="ava1" />
