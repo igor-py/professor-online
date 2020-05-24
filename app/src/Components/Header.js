@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../styles/Header.css';
 import professor from '../images/professor.png';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getCookie } from '../utils/cookies';
 
 export default function Header() {
