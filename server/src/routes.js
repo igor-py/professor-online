@@ -7,8 +7,8 @@ import authMiddleware from './middlewares/auth';
 
 const routes = new Router();
 
-routes.get('/users/:id', authMiddleware, UserController.getById);
-routes.get('/users', authMiddleware, UserController.getUsersByTags);
+routes.get('/users/:id', UserController.getById);
+routes.get('/users', UserController.getUsersByTags);
 routes.post('/users', UserController.createUser);
 routes.put('/users/:id/tags', authMiddleware, UserController.updateTags);
 
