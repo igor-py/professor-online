@@ -70,6 +70,9 @@ export default function Header() {
   function renderUnloggedOptions() {
     return (
       <div id="labelContainer">
+        <Link to="/pesquisa" className="links-header">
+          Pesquisar Professores
+        </Link>
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>
