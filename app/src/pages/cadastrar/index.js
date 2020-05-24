@@ -22,6 +22,7 @@ const Image = styled.img`
   border-radius: 150px;
   height: 13vw;
   width: 13vw;
+  
 `;
 
 const Icon = styled.img`
@@ -35,11 +36,13 @@ const EntityContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 
   &:hover {
     opacity: 0.5;
     cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
   }
 `;
 
@@ -103,37 +106,39 @@ const Button = styled.button`
   text-decoration: none;
   height: 42px;
   width: 90px;
-  border-radius: 21px;
-  transition: background-color 0.2s;
+  border-radius: 8px;
+  transition: all 0.8s;
 
   &:hover {
-    background-color: #555;
+    background-color: #d13330;
+    color:white;
     cursor: pointer;
   }
 `;
 
 const SubmmitButton = styled.button`
-  margin-top: 40px;
   background-color: #222;
-  margin: 16px;
-  font: 24px Arial;
+  margin-top:10%;
+  font: 1.1vw Verdana, Geneva, Tahoma, sans-serif;
   outline: none;
   text-decoration: none;
   height: 42px;
   width: 150px;
   border: 2px solid #fff;
-  border-radius: 21px;
-  transition: background-color 0.2s;
+  border-radius: 8px;
+  transition: all 0.8s;
+  color:white;
 
   &:hover {
-    background-color: #555;
+    background-color: #E6E6E6;
     cursor: pointer;
+    color:#262626;
   }
 `;
 
 const Select = styled.select`
   margin: 16px 16px 0 16px;
-  font: 18px Arial;
+  font:0.8vw Verdana, Geneva, Tahoma, sans-serif;
   border: 2px solid #fff;
   border-radius: 4px;
   background-color: #222;
@@ -269,6 +274,7 @@ export default function Cadastrar() {
           <Image src={student} alt="student"></Image>
         </EntityContainer>
       </Container>
+      
     );
   }
 
@@ -298,25 +304,25 @@ export default function Cadastrar() {
             <FormFragment>
               <FormText>Turno:</FormText>
               <Select id="turn" name="turnos">
-                <option value="manha">manha</option>
-                <option value="tarde">tarde</option>
-                <option value="noite">noite</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
               </Select>
             </FormFragment>
             <FormFragment>
               <FormText>Voce gostaria de lecionar sobre que assunto?</FormText>
               <Select id="tag" name="tags">
-                <option value="1">matemática</option>
-                <option value="2">português</option>
-                <option value="3">história</option>
-                <option value="4">geografia</option>
-                <option value="5">biologia</option>
-                <option value="6">inglês</option>
-                <option value="7">física</option>
-                <option value="8">química</option>
-                <option value="9">filosofia</option>
-                <option value="10">literatura</option>
-                <option value="11">artes</option>
+                <option value="1">Matemática</option>
+                <option value="2">Português</option>
+                <option value="3">História</option>
+                <option value="4">Geografia</option>
+                <option value="5">Biologia</option>
+                <option value="6">Inglês</option>
+                <option value="7">Física</option>
+                <option value="8">Química</option>
+                <option value="9">Filosofia</option>
+                <option value="10">Literatura</option>
+                <option value="11">Artes</option>
               </Select>
             </FormFragment>
             <SubmmitButton onClick={cadastrarProfessor}>

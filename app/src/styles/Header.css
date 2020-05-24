@@ -82,18 +82,22 @@ h3 {
 
 .dropdown-content button {
   cursor: pointer;
-  margin-left: 35%;
-  margin-top: 40px;
+  margin-left: 42%;
+  margin-top: 10%;
   background-color: #262626;
   transition: all 0.5s;
   font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 8px;
+  color: white;
+  padding: 1%;
+
 }
 
 .dropdown-content button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  transition: 0.5s;
+  transition: 0.8s;
   font: 0.8vw Verdana, Geneva, Tahoma, sans-serif;
 }
 

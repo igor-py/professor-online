@@ -32,13 +32,13 @@ class Home extends Component {
 
             <div>
               <h2>Seja um Professor</h2>
-              <div>
+              <p>
                 Seja um agente de transformação do conhecimento.
                 <br /> Há nesse momento diversos alunos que precisam de sua
                 <br /> ajuda. Seu desafio será transmitir, de forma clara
                 <br /> e compreensível, o conteúdo para o aluno.
                 <br /> Seja o elo entre o indivíduo e o saber.
-              </div>
+              </p>
             </div>
           </div>
 
@@ -46,16 +46,14 @@ class Home extends Component {
             <div>
               <h2>Seja um Aluno</h2>
               <br />
-              <br />
-              <br />
               <p>
                 Este website é essencial se você está
                 <br />
                 estudando por conta própria e quer tirar
                 <br /> suas dúvidas. Aqui os professores te respondem
-                <br /> de forma simples para que você não feche
+                <br /> de forma simples para que você não saia
                 <br />
-                essa aba com dúvida.
+                daqui com dúvida.
               </p>
             </div>
 
