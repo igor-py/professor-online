@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import User from '../../Components/User';
 import '../../styles/pesquisa.css';
-import proffLogo from '../../images/professor.png'
-import api from '../../services/api';
+import proffLogo from '../../images/professor.png';
+import { StringUtils } from '../../utils/stringUtils';
 
 export default class Pesquisa extends Component {
   state = {
     newUser: '',
-    users: [
+    users: [],
+    storageUsers: [
       {
         id: 1,
         name: 'Igor Marins',
@@ -16,7 +17,8 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'manhã',
         rating: 5,
-        aula: 'português',
+        aula: 'Português',
+        uniqueAula: 'portugues'
       },
       {
         id: 2,
@@ -26,7 +28,8 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 4.3,
-        aula: 'matemática',
+        aula: 'Matemática',
+        uniqueAula: 'matematica'
       },
       {
         id: 3,
@@ -36,7 +39,8 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 3.9,
-        aula: 'react',
+        aula: 'React',
+        uniqueAula: 'react'
       },
       {
         id: 4,
@@ -46,8 +50,64 @@ export default class Pesquisa extends Component {
         isTeacher: true,
         turn: 'tarde',
         rating: 3.3,
-        aula: 'react',
-      },],
+        aula: 'React',
+        uniqueAula: 'react'
+      },
+      {
+        id: 5,
+        name: 'Lucas Neto',
+        email: 'Lucas.dindinho@gmail.com',
+        password: '12345',
+        isTeacher: false,
+        turn: 'tarde',
+        rating: 3.3,
+        aula: 'React',
+        uniqueAula: 'react'
+      },
+      {
+        id: 6,
+        name: 'Felipe Neto',
+        email: 'felipe.neto@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 5,
+        aula: 'Digital Influencer',
+        uniqueAula: 'digital influencer'
+      },
+      {
+        id: 7,
+        name: 'Maria Paula',
+        email: 'maria.paula@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 4.3,
+        aula: 'Digital Influencer',
+        uniqueAula: 'digital influencer'
+      },
+      {
+        id: 8,
+        name: 'Ava Taylor',
+        email: 'Ava.taylor@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 3.9,
+        aula: 'Relacionamentos',
+        uniqueAula: 'relacionamentos'
+      },
+      {
+        id: 9,
+        name: 'João Dória',
+        email: 'João.doria@gmail.com',
+        password: '12345',
+        isTeacher: true,
+        turn: 'tarde',
+        rating: 3.3,
+        aula: 'Políticas Públicas',
+        uniqueAula: 'politicas publicas'
+      }]
   };
 
   handleInputChange = e => {
@@ -59,13 +119,12 @@ export default class Pesquisa extends Component {
   handleSubmit = async e => {
     e.preventDefault();
 
-    const { newUser } = this.state
+    const { newUser, storageUsers } = this.state
 
-    const response = await api.post({
-      data: {
-        tags: newUser
-      }
-    })
+    const response = storageUsers.filter(
+      user => user.uniqueAula === StringUtils.replaceAllSpecialCharactersAndSetLowerCase(newUser) 
+      && user.isTeacher === true
+    )
 
     this.setState({
       users: [...response],
