@@ -3,14 +3,14 @@ import '../../styles/Home.css';
 import business from '../../images/business.jpg';
 import homen_1 from '../../images/homem1.png';
 import homen_2 from '../../images/homem2.png';
-import ar_camera from '../../images/ar-camera.png';
-import base_de_dados from '../../images/base-de-dados.png';
-import codigo from '../../images/codigo.png';
-import fones from '../../images/fones-de-ouvido.png';
-import grupo from '../../images/grupo.png';
-import mercado from '../../images/mercado.png';
-import smartphone from '../../images/smartphone.png';
-import universidade from '../../images/universidade.png';
+import matematica from '../../images/matematica.png';
+import portugues from '../../images/portugues.png';
+import ingles from '../../images/ingles.png';
+import geografia from '../../images/geografia.png';
+import historia from '../../images/historia.png';
+import fisica from '../../images/fisica.png';
+import quimica from '../../images/quimica.png';
+import biologia from '../../images/biologia.png';
 
 class Home extends Component {
   state = {};
@@ -64,34 +64,34 @@ class Home extends Component {
 
           <div id="fundo-logos">
             <div>
-              <img src={fones} alt="Música" />
+              <img src={matematica} alt="Matemática" />
               <h4>Matemática</h4>
-
-              <img src={codigo} alt="WEB" />
+                 
+              <img src={portugues} alt="Português" />
               <h4>Português</h4>
             </div>
 
             <div>
-              <img src={universidade} alt="Graduação" />
-              <h4>História</h4>
+              <img src={historia} alt="História" />
+              <h4 class="img-historia">História</h4>
 
-              <img src={mercado} alt="Finanças" />
-              <h4>Inglês</h4>
+              <img src={ingles} alt="Inglês" />
+              <h4 class="img-right">Inglês</h4>
             </div>
 
             <div>
-              <img src={smartphone} alt="Mobile" />
+              <img src={geografia} alt="Geografia" />
               <h4>Geografia</h4>
 
-              <img src={base_de_dados} alt="Banco de Dados" />
-              <h4>Física</h4>
+              <img  src={fisica} alt="Física" />
+              <h4 class="img-right">Física</h4>
             </div>
 
             <div>
-              <img src={ar_camera} alt="Fotografia" />
+              <img src={quimica} alt="Química" />
               <h4>Química</h4>
 
-              <img src={grupo} alt="Gerenciamento" />
+              <img src={biologia} alt="Biologia" />
               <h4>Biologia</h4>
             </div>
           </div>
