@@ -30,6 +30,14 @@ const Icon = styled.img`
   margin: 20px;
 `;
 
+const Main_title = styled.div`
+  display:flex;
+  color:#262626;
+  justify-content:center;
+  margin:10% 0% 10% 0%;
+  font: 1.8vw Verdana, Geneva, Tahoma, sans-serif;
+`;
+
 const EntityContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -87,6 +95,13 @@ const FormFragment = styled.div`
   flex-direction: column;
   align-items: center;
   width: 80%;
+`;
+
+const Container1 = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+
 `;
 
 const Title = styled.div`
@@ -251,27 +266,35 @@ export default function Cadastrar() {
 
   function renderOptions() {
     return (
-      <Container>
-        <EntityContainer
-          onClick={() => {
-            setHaveChosen(true);
-            setIsProfessor(true);
-          }}
-        >
-          <Title>Sou um professor</Title>
-          <Image src={professor} alt="professor"></Image>
-        </EntityContainer>
 
-        <EntityContainer
-          onClick={() => {
-            setHaveChosen(true);
-            setIsProfessor(false);
-          }}
-        >
-          <Title>Sou um aluno</Title>
-          <Image src={student} alt="student"></Image>
-        </EntityContainer>
-      </Container>
+      <Container1>
+        <Container>
+          <EntityContainer
+            onClick={() => {
+              setHaveChosen(true);
+              setIsProfessor(true);
+            }}
+          >
+            <Title>Sou um professor</Title>
+            <Image src={professor} alt="professor"></Image>
+          </EntityContainer>
+
+          <EntityContainer
+            onClick={() => {
+              setHaveChosen(true);
+              setIsProfessor(false);
+            }}
+          >
+            <Title>Sou um aluno</Title>
+            <Image src={student} alt="student"></Image>
+          </EntityContainer>
+        </Container>
+
+        <Main_title>
+          Faça parte desse time!
+        </Main_title>
+      </Container1>
+
     );
   }
 
