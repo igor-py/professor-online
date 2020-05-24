@@ -3,20 +3,23 @@ import { useHistory } from 'react-router-dom';
 import '../styles/Header.css';
 import professor from '../images/professor.png';
 import { Link } from 'react-router-dom';
-import { getCookie } from '../utils/cookies';
+import { getCookie, eraseCookie, setCookie } from '../utils/cookies';
 
 export default function Header() {
   const [isLogged, setIsLogged] = useState();
+  const [cookieState, setCookieState] = useState();
 
   useEffect(() => {
     const cookie = getCookie('auth');
     console.log('cookie ', cookie);
     if (cookie) {
+      setCookieState(cookie);
       setIsLogged(true);
     } else {
+      setCookieState('');
       setIsLogged(false);
     }
-  }, [isLogged]);
+  }, [isLogged, cookieState]);
 
   const history = useHistory();
 
@@ -25,24 +28,44 @@ export default function Header() {
     history.push(path);
   };
 
-  function RenderUnloggedOptions() {
+  function logOut() {
+    eraseCookie('auth');
+    setCookieState('');
+  }
+
+  function logIn() {
+    setCookie('auth', 'aed1e15fs1asd', 7);
+    const cookie = getCookie('auth');
+    setCookieState(cookie);
+    toogleDropdown();
+  }
+
+  function renderUnloggedOptions() {
     return (
       <div id="labelContainer">
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>
-        <label className="links-header" onClick={ShowDropdown}>
+        <label className="links-header" onClick={toogleDropdown}>
           Entrar
         </label>
       </div>
     );
   }
 
-  function RenderLoggedOptions() {
-    return <div>logged in</div>;
+  function renderLoggedOptions() {
+    return (
+      <div id="labelContainer">
+        <label className="links-header" onClick={logOut}>
+          Log out
+        </label>
+        <label className="links-header">Pesquisar Professores</label>
+        <label className="links-header">Perfil</label>
+      </div>
+    );
   }
 
-  function ShowDropdown() {
+  function toogleDropdown() {
     document.getElementById('myDropdown').classList.toggle('show');
   }
 
@@ -51,7 +74,7 @@ export default function Header() {
       <div id="logoContainer" onClick={routeChange}>
         <img src={professor} alt="Professor Online" />
       </div>
-      {isLogged ? RenderLoggedOptions() : RenderUnloggedOptions()}
+      {isLogged ? renderLoggedOptions() : renderUnloggedOptions()}
 
       <div id="myDropdown" className="dropdown-content">
         <div>
@@ -64,7 +87,7 @@ export default function Header() {
           <input type="password" />
         </div>
 
-        <button>
+        <button onClick={logIn}>
           <span>Entrar</span>
         </button>
       </div>
