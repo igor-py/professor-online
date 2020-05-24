@@ -35,8 +35,8 @@ const getUserByEmail = (email) =>
 const checkForExistingUser = (email, id) => `
   SELECT * FROM public.users WHERE email = '${email}' OR id = ${id};
 `;
-const getUserIdsByTagIds = (tagIds) => `
-  SELECT DISTINCT userId FROM public.userTags WHERE tagId IN (${tagIds})
+const getUserByTagIds = (tagIds) => `
+  SELECT u.id, u.name, u.email, u.isteacher, u.turn, u.rating FROM public.userTags t JOIN public.users u ON t.userid = u.id WHERE t.tagId IN (${tagIds})
 `;
 
 export const queries = {
@@ -46,6 +46,6 @@ export const queries = {
   getUserById,
   getUserByEmail,
   checkForExistingUser,
-  getUserIdsByTagIds,
+  getUserByTagIds,
   getTagsByUserId,
 };

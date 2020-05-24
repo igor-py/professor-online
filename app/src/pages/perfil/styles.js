@@ -2,14 +2,19 @@ import styled from 'styled-components';
 
 export const Pagecontainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
-  height: 100%;
+  height: 80vh;
   align-items: center;
   justify-items: center;
 `;
 
 export const InnerContainer = styled.div`
   width: 70%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 10px;
 `;
 
 export const Container = styled.div`
@@ -19,53 +24,9 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #222;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 12px;
-`;
-
-export const H1 = styled.h1`
-  font-size: 22px;
-  margin: 0 20px;
-  align-items: center;
-  padding: 8px;
-  color: #eb423f;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`;
-
-export const ContainerH1 = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const Botao = styled.button`
-  margin: 10px 20px;
-  border-radius: none;
-  padding: 20px 15px;
-  display: block;
-  background-color: darkorange;
-  position: relative;
-  width: 60%;
-  transition: 500ms;
-  &:hover {
-    background: darkred;
-    transform: scale(1.02);
-    font-size: 15px;
-  }
-`;
-
 export const ImagemContainer = styled.div`
   display: flex;
+  min-width: 100px;
   flex-direction: row;
   margin-top: 20px;
   left: 0;
@@ -95,4 +56,39 @@ export const Imagem = styled.img`
   border: 4px solid #b66;
   border-radius: 8px;
   margin-right: 30px;
+`;
+
+export const LeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  border-radius: 8px;
+  border: 2px solid lightgrey;
+  margin-right: 8px;
+`;
+
+export const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 3;
+  border-radius: 8px;
+  border: 2px solid lightgrey;
+`;
+
+export const UserInfo = styled.div`
+  font: 18px Arial;
+  color: #111;
+  margin: 20px;
+`;
+
+export const BoldText = styled.div`
+  font: 18px Arial;
+  color: #111;
+  font-weight: bold;
+`;
+
+export const EmailContainer = styled.div`
+  margin-top: 20px;
 `;

@@ -100,8 +100,7 @@ class UserController {
 
     if (req.body.tags.length > 0) {
       try {
-        users = (await pool.query(queries.getUserIdsByTagIds(req.body.tags)))
-          .rows;
+        users = (await pool.query(queries.getUserByTagIds(req.body.tags))).rows;
       } catch (e) {
         console.log(e);
         return res.status(500).json({ error: e });
@@ -134,8 +133,10 @@ class UserController {
     if (result.rowCount === 0) {
       return res.status(400).json({ error: 'User not found' });
     } else {
-      result = result.rows;
+      result = result.rows[0];
     }
+
+    delete result['password'];
 
     await pool.end();
 
