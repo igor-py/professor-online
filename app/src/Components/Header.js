@@ -59,7 +59,10 @@ export default function Header() {
 
     console.log(response);
 
-    setCookie('user', String(response.data.user), 7);
+    const { user } = response.data;
+    delete user['password'];
+
+    setCookie('user', JSON.stringify(user), 7);
     setCookie('auth', response.data.token, 7);
     const cookie = getCookie('auth');
     setCookieState(cookie);
@@ -70,6 +73,9 @@ export default function Header() {
   function renderUnloggedOptions() {
     return (
       <div id="labelContainer">
+        <Link to="/pesquisa" className="links-header">
+          Pesquisar Professores
+        </Link>
         <Link to="/cadastrar" className="links-header">
           Cadastrar
         </Link>

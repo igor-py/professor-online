@@ -56,10 +56,6 @@ main input{
     text-align: left;
 }
 
-p1{
-    text-align: left;
-}
-
 #exemplo-aluno{
     background-color: #F3F3F3;
     display: flex;
@@ -97,9 +93,18 @@ p1{
 }
 
 #fundo-logos h4{
-    padding-top: 10px;
+    padding-top: 12px;
 }
 
 #fundo-logos img{
     padding-top: 70px;
 }
+
+.img-right{
+    padding-left: 14px;
+}
+
+.img-historia{
+    padding-left: 10px;
+}
+

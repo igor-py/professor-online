@@ -21,9 +21,11 @@ class SessionController {
     const { email, password } = req.body;
 
     let user;
+    let tags;
 
     try {
       user = (await pool.query(queries.getUserByEmail(email))).rows[0];
+      tags = (await pool.query(queries.getTagsByUserId(user.id))).rows;
     } catch (e) {
       console.log(e);
       return res.status(500).json({ error: e });
@@ -36,11 +38,11 @@ class SessionController {
     if (user.password !== password) {
       return res.status(401).json({ error: 'Incorrect Password.' });
     }
-
-    const { id, name } = user;
+    console.log(user);
+    const { id, name, isteacher, turn, rating } = user;
 
     return res.json({
-      user: { id, name, email },
+      user: { id, name, email, isteacher, turn, rating, tags },
       token: jwt.sign({ id }, authConfig.secretString, {
         expiresIn: authConfig.expiration,
       }),

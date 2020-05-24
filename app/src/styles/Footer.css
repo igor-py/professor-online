@@ -19,7 +19,21 @@ footer {
   flex-direction: column;
 }
 
-#link {
+#link1 {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8vw;
+  margin-top: 12px;
+}
+
+#link2 {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8vw;
+  margin-top: 12px;
+}
+
+#link3 {
   color: white;
   text-decoration: none;
   font-size: 0.8vw;
@@ -47,8 +61,6 @@ label {
   flex-direction: column;
 }
 
-
 .logos-social:hover {
-
   transform: scale(1.2);
 }
