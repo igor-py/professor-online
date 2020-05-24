@@ -19,10 +19,9 @@ const Main = styled.main`
 `;
 
 const H1 = styled.h1`
-    font-size: 20px;
+    font-size: 22px;
     margin: 0 20px;
     align-items: center;
-    border: 0.5px white solid;
     padding: 8px;
     color: #eb423f;
     font-weight: bold;
@@ -39,24 +38,34 @@ const ContainerH1 = styled.div`
 `;
 
 const Botao = styled.button`
-    margin: 20px 20px;
+    margin: 10px 20px;
     border-radius: none;
     padding: 20px 15px;
     display: block;
-    background-color: lightcoral;
+    background-color: darkorange;
     position: relative;
-    width: 100%;
+    width: 60%;
+    transition: 800ms;
+    &:hover{
+        background: darkred;
+        transform: scale(1.02);
+        font-size: 15px;
+    }
 `;
 
 const ImagemContainer = styled.div`
-    display: flex;
-    flex-direction: row;
+    margin-top: 20px;
+    display: absolute;
+    left: 0;
     align-items: left;
 `;
 
 const Imagem = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
+    &:hover{
+        transform: scale(1.2);
+    }
 `;
 
 export default function Perfil() {
@@ -66,13 +75,12 @@ export default function Perfil() {
         return (
 
             <>
+                <ImagemContainer>
+                    <H1>Avatar</H1>
+                    <Imagem src="https://img.icons8.com/color/48/000000/ninja-turtle.png" />
+                </ImagemContainer>
+                
                 <Container>
-                    <ImagemContainer>
-                        <H1>Avatar</H1>
-                        <Imagem src="https://img.icons8.com/color/48/000000/ninja-turtle.png" />
-                    </ImagemContainer>
-                    
-                    <H1>Perfil</H1>
                     <Main>
                         <ContainerH1>
                             <H1>Igor Marins</H1>
@@ -80,7 +88,8 @@ export default function Perfil() {
                             <H1>Professor</H1>
                         </ContainerH1>
 
-                        <Botao onClick={()=>{console.log('cliquei')}}>Editar Perfil</Botao>
+                        <Botao onClick={() => { alert('Mudar informações do perfil') }}>Editar Perfil</Botao>
+                        <Botao onClick={() => { alert('Mudar Avatar') }}>Mudar Avatar</Botao>
                     </Main>
                 </Container>
             </>
