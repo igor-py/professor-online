@@ -67,7 +67,17 @@ export default function Perfil() {
         </EmailContainer>
         <EmailContainer>
           <BoldText>Categoria de aulas:</BoldText>
-          {` ${categoryArray[userState.tags ? userState.tags[0].tagid : 0]}`}
+          {
+            categoryArray[
+              userState
+                ? userState.tags
+                  ? userState.tags[0]
+                    ? userState.tags[0].tagid
+                    : 0
+                  : 0
+                : 0
+            ]
+          }
         </EmailContainer>
       </UserInfo>
     );
